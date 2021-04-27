@@ -1,59 +1,57 @@
-<nav class="flex items-center justify-between flex-wrap bg-teal p-6">
-  <div class="flex items-center flex-no-shrink text-white mr-6">
-    <svg class="h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
-    <span class="font-semibold text-xl tracking-tight">Tailwind CSS</span>
-  </div>
-  <div class="block lg:hidden">
-    <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white">
-      <svg class="h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-    </button>
-  </div>
-  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-    <div class="text-sm lg:flex-grow">
+<nav class="flex items-center justify-between flex-wrap p-6">
+  <ul class="max-w-max">
+    {% for link in linklists.main-menu.links %}
+      {% assign child_list_handle = link.title | handleize %}
+      {% if linklists[child_list_handle].links != blank %}
+        <a href="{{ link.url }}">
+          {{ link.title }}
+        </a>
+        [{% for childlink in linklists[child_list_handle].links %}
+          <a href="{{ childlink.url }}">
+          {{ link.title }}
+          </a>
+        {% endfor %}]
+      {% else %}
+      {% if forloop.index == 1 %}
+        {% capture nav_classes %}
+          "transform translate-x-20"
+        {% endcapture %}
+      {% elsif forloop.index == 2 %}
+        {% capture nav_classes %}
+          "transform rotate-6 translate-x-16 translate-y-4"
+        {% endcapture %}
+      {% elsif forloop.index == 3 %}
+        {% capture nav_classes %}
+          "transform rotate-12 translate-x-12 translate-y-8"
+        {% endcapture %}
+      {% endif %}
+      <li class={{ nav_classes }}>
+        <a href="{{ link.url }}">
+          <button class="bg-black text-cream px-4 py-2 text-xl font-bungee-inline tracking-wider text-white rounded hover:bg-red hover:text-black">{{ link.title }}</button>
+        </a>
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 
-      {% for link in linklists.main-menu.links %}
-        {% assign child_list_handle = link.title | handleize %}
-        {% if linklists[child_list_handle].links != blank %}
-          <a href="{{ link.url }}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
-            {{ link.title }}
-          </a>
-          [{% for childlink in linklists[child_list_handle].links %}
-            <a href="{{ childlink.url }}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
-            {{ link.title }}
-            </a>
-          {% endfor %}]
-        {% else %}
-          <a href="{{ link.url }}" class="bg-red-50 block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
-            {{ link.title }}
-          </a>
-        {% endif %}
-      {% endfor %}
+  <div class="z-1">
+    <a href="/" class="inline-block">{% include 'logo' %}</a>
+  </div>
+
+  <div class="transform z-1 relative -translate-x-20">
+    <a href="/cart" class="inline-block w-16">{% include 'cart-icon' %}</a>
+    <div id="CartCount" class="absolute bottom-0 right-0 px-2 bg-black text-cream rounded {% if cart.item_count == 0 %} hidden{% endif %}">
+      <span class="font-bungee text-sm">{{ cart.item_count }}</span>
     </div>
-    <div>
-      <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0">Download</a>
-    </div>
+
+    {% if shop.customer_accounts_enabled %}
+      {% if customer %}
+        <a href="/account">account</a>
+        {{ 'log out'  | customer_logout_link }}
+      {% else %}
+        {{ 'log in ' | customer_login_link }}
+        {{ 'register' | customer_register_link }}
+      {% endif %}
+    {% endif %}
   </div>
 </nav>
-  {% for link in linklists.main-menu.links %}
-    {% assign child_list_handle = link.title | handleize %}
-    {% if linklists[child_list_handle].links != blank %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-      [{% for childlink in linklists[child_list_handle].links %}
-        <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-      {% endfor %}]
-    {% else %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-    {% endif %}
-  {% endfor %}
-
-  <a href="/cart">cart</a>
-
-  {% if shop.customer_accounts_enabled %}
-    {% if customer %}
-      <a href="/account">account</a>
-      {{ 'log out'  | customer_logout_link }}
-    {% else %}
-      {{ 'log in ' | customer_login_link }}
-      {{ 'register' | customer_register_link }}
-    {% endif %}
-  {% endif %}

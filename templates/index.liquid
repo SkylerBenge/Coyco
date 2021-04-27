@@ -1,4 +1,79 @@
-<h1 class="text-lg font-semibold">test</h1>
+<style>
+
+#index .svg-1 path{
+    animation: scale-path-1 8s ease-in-out infinite;
+}
+#index .svg-2 path{
+    animation: scale-path-2 10s ease-in-out infinite;
+}
+
+@keyframes scale-path-1 {
+  50% {
+    d: path('M64,23 C3,82 329,14 261,69');
+  }
+}
+
+@keyframes scale-path-2 {
+  50% {
+    d: path('M46,105 C287,117 273,21 49,9');
+  }
+}
+
+#index svg polyline,
+#index svg line,
+#index svg path {
+  fill: none;
+  stroke: #a1342d;
+  stroke-width: 16;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: 0.2s;
+}
+#index .svg-1 {
+  display: inline-block;
+  width: 70%;
+  height: 70%;
+}
+#index .svg-2 {
+  display: inline-block;
+  width: 50%;
+}
+</style>
+
+<div id="index" class="grid grid-flow-row grid-rows-5 grid-cols-2 gap-2 m-auto max-w-screen-lg pt-8 -mt-8 pb-20 overflow-x-hidden">
+  <div class="transform scale-150 -rotate-6 col-span-2 translate-x-64">
+    <span class="font-bungee text-9xl uppercase text-black -z-1">Coy & CO.</span>
+  </div>
+  <div class="transform scale-125 -rotate-2 translate-y-24 translate-x-20">
+    <span class="font-bungee text-7xl uppercase text-black">is</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="svg-1" viewBox="0 0 300 100" preserveAspectRatio="xMidYMid meet">
+      <path d="M48,34 C262,15 0,81 296,68" />
+    </svg>
+  </div>
+  <div class="transform -rotate-6 translate-x-20 translate-y-20">
+    <a href="/collections/frontpage"><button class="bg-red animate-wiggle px-4 py-2 text-8xl font-bungee tracking-wider text-white rounded hover:bg-black hover:text-cream">Order</button></a>
+  </div>
+  <div class="transform scale-110 rotate-6 col-span-2 translate-y-24 translate-x-12">
+    <span class="font-bungee text-9xl uppercase text-black">more than</span>
+  </div>
+  <div class="transform translate-y-16">
+    <a href="/pages/about-us"><button class="bg-black text-cream animate-bounce px-4 py-2 text-6xl font-bungee tracking-wider text-white rounded hover:bg-red hover:text-black">About Us</button></a>
+  </div>
+  <div class="transform scale-125 translate-y-20 -translate-x-20 text-right">
+     <svg xmlns="http://www.w3.org/2000/svg" class="svg-2 -translate-y-20" viewBox="0 0 300 125" preserveAspectRatio="xMidYMid meet">
+      <path d="M248,62 C0,0 390,22 19,32" />
+    </svg>
+    <span class="font-bungee text-9xl uppercase text-black">a</span>
+  </div>
+  <div class="transform scale-110 col-span-2 -translate-y-12 -rotate-12 translate-x-12">
+    <span class="font-bungee text-9xl uppercase text-black">flower</span>
+  </div>
+  <div class="transform scale-150 rotate-12 col-span-2 -translate-x-60 -translate-y-32 text-right">
+    <span class="font-bungee text-9xl uppercase text-black">shop</span>
+  </div>
+</div>
+
+{% comment %}
 {% for product in collections.frontpage.products limit:4 %}
   <div>
     <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
@@ -9,3 +84,4 @@
     </a>
   </div>
 {% endfor %}
+{% endcomment %}
