@@ -1,9 +1,21 @@
-<nav class="flex items-baseline justify-between flex-wrap p-6">
-  <div class="transform z-1 relative translate-x-20">
-    <a target="_blank" href="instagram.com/coy_and_co/" class="inline-block w-24 mr-4">{% include 'instagram-icon' %}</a>
+<nav class="max-w-screen-2xl my-0 mx-auto pb-8 flex items-baseline justify-between flex-wrap h-full pl-6 pr-6">
+  {% if template contains 'page' %}
+  <div class="transform z-1 relative ml-20">
+    <a target="_blank" href="https://www.instagram.com/coy_and_co/" class="inline-block w-24 mr-4">{% include 'instagram-icon' %}</a>
     <a target="_blank" href="mailto:coyandco@gmail.com" class="inline-block w-24">{% include 'mail-icon' %}</a>
   </div>
-  <div class="transform z-1 relative -translate-x-20 font-bold">
-    Site by <a style="color: #e98853" href="yourdailystudio.com">Your Daily Studio</a>
+  {% else %}
+  <div>
+  </div>
+  {% endif %}
+  <div class="z-1 mr-20 font-bold h-full flex items-end">
+    Site by <a target="_blank" style="color: #e98853;" href="https://www.yourdailystudio.com/">Your Daily Studio</a>
   </div>
 </nav>
+
+{% schema %}
+  {
+    "name": "Some section",
+    "class": "flex-grow"
+  }
+{% endschema %}

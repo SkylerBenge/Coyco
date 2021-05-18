@@ -12,18 +12,56 @@ module.exports = {
         DEFAULT: '#222222'
       },
       red: {
-        DEFAULT: '#a1342d'
+        DEFAULT: '#cc3c38'
       },
       yellow: {
         DEFAULT: '#ff9b25'
       },
       cream: {
         DEFAULT: '#f5f5e5'
+      },
+      white: {
+        DEFAULT: '#ffffff'
       }
     },
     fontFamily: {
-      'bungee': ['Bungee', 'cursive'],
-      'bungee-inline': ['Bungee Inline', 'cursive']
+      'platelet': ['Platelet', 'cursive'],
+      'platelet-heavy': ['Platelet Heavy', 'cursive'],
+      'ubuntu': ['Ubuntu', 'cursive'],
+      'ubuntu-heavy': ['Ubuntu Heavy', 'cursive']
+    },
+    scale: {
+      '0': '0',
+      '25': '.25',
+      '50': '.5',
+      '75': '.75',
+      '90': '.9',
+      '95': '.95',
+      '100': '1',
+      '105': '1.05',
+      '110': '1.1',
+      '125': '1.25',
+      '150': '1.5',
+      '175': '1.75',
+      '200': '2',
+    },
+    fontSize: {
+      'xs': '.75rem',
+      'sm': '.875rem',
+      'base': '1rem',
+      'lg': '1.125rem',
+      'xl': '1.25rem',
+      '2xl': '1.5rem',
+      '3xl': '1.875rem',
+      '4xl': '2.25rem',
+      '5xl': '3rem',
+      '6xl': '3.75rem',
+      '7xl': '4.5rem',
+      '8xl': '6rem',
+      '9xl': '8rem',
+      '10xl': '10rem',
+      '11xl': '12rem',
+      '12xl': '14rem',
     },
     keyframes: {
       wiggle: {
@@ -50,6 +88,13 @@ module.exports = {
       '1': '1',
       '2': '2',
       '3': '3',
+    },
+
+    extend: {
+      lineHeight: {
+        '1': '.25rem',
+        '2': '.5rem'
+      }
     }
   },
   variants: {

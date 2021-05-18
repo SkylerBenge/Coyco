@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="p-0">
 <head>
   <title>{{ page_title }}</title>
   <meta charset="utf-8">
@@ -15,7 +15,7 @@
   {{ 'application.js' | asset_url | script_tag }}
 </head>
 
-<body class="bg-repeat" style="background:url({{ 'ricepaper_small_background.png'| file_url }})">
+<body class="bg-repeat flex flex-col h-screen" style="background:url({{ 'ricepaper_small_background.png'| file_url }})">
 
   {% section 'header' %}
 

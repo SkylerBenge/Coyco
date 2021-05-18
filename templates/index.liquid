@@ -15,7 +15,7 @@
 
 @keyframes scale-path-2 {
   50% {
-    d: path('M46,105 C287,117 273,21 49,9');
+    d: path('M30,68 C341,0 344,182 62,17');
   }
 }
 
@@ -23,7 +23,6 @@
 #index svg line,
 #index svg path {
   fill: none;
-  stroke: #a1342d;
   stroke-width: 16;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -31,45 +30,40 @@
 }
 #index .svg-1 {
   display: inline-block;
-  width: 70%;
-  height: 70%;
+  width: 65%;
 }
 #index .svg-2 {
   display: inline-block;
-  width: 50%;
+  width: 60%;
 }
 </style>
 
-<div id="index" class="grid grid-flow-row grid-rows-5 grid-cols-2 gap-2 m-auto max-w-screen-lg pt-8 -mt-8 pb-20 overflow-x-hidden">
-  <div class="transform scale-150 -rotate-6 col-span-2 translate-x-64">
-    <span class="font-bungee text-9xl uppercase text-black -z-1">Coy & CO.</span>
-  </div>
-  <div class="transform scale-125 -rotate-2 translate-y-24 translate-x-20">
-    <span class="font-bungee text-7xl uppercase text-black">is</span>
-    <svg xmlns="http://www.w3.org/2000/svg" class="svg-1" viewBox="0 0 300 100" preserveAspectRatio="xMidYMid meet">
-      <path d="M48,34 C262,15 0,81 296,68" />
+<div id="index" style="height: 700px; padding-bottom: 26px;" class="grid grid-flow-row grid-rows-4 grid-cols-2 gap-2 m-auto pl-3 pr-3 -mt-32 max-w-screen-2xl">
+  <div class="transform scale-115 -rotate-2 translate-y-32 translate-x-20 -z-1">
+    <span class="font-platelet-heavy text-8xl uppercase text-black">is</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="svg-1 stroke-current text-red" viewBox="0 0 300 100" preserveAspectRatio="xMidYMid meet">
+      <path d="M28,34 C262,15 0,81 286,62" />
     </svg>
   </div>
-  <div class="transform -rotate-6 translate-x-20 translate-y-20">
-    <a href="/collections/frontpage"><button class="bg-red animate-wiggle px-4 py-2 text-8xl font-bungee tracking-wider text-white rounded hover:bg-black hover:text-cream">Order</button></a>
+  <div class="transform -rotate-6 translate-y-32 h-20 pr-20 -translate-x-40 text-right">
+    <a href="/collections/frontpage"><button class="bg-red animate-wiggle h-32 px-4 text-9xl leading-4 uppercase font-platelet-heavy tracking-wider text-white rounded hover:bg-black hover:text-cream">Order</button></a>
   </div>
-  <div class="transform scale-110 rotate-6 col-span-2 translate-y-24 translate-x-12">
-    <span class="font-bungee text-9xl uppercase text-black">more than</span>
+  <div class="transform rotate-6 col-span-2 translate-y-32 pl-28 -z-1">
+    <span class="font-platelet-heavy text-10xl uppercase text-black">Portland's</span>
   </div>
-  <div class="transform translate-y-16">
-    <a href="/pages/about-us"><button class="bg-black text-cream animate-bounce px-4 py-2 text-6xl font-bungee tracking-wider text-white rounded hover:bg-red hover:text-black">About Us</button></a>
+  <div class="transform translate-y-40 pl-8">
+    <a href="/pages/about-us"><button class="bg-black text-cream animate-bounce px-4 py-2 text-6xl font-platelet-heavy tracking-wider text-white rounded hover:bg-red hover:text-black">About Us</button></a>
   </div>
-  <div class="transform scale-125 translate-y-20 -translate-x-20 text-right">
-     <svg xmlns="http://www.w3.org/2000/svg" class="svg-2 -translate-y-20" viewBox="0 0 300 125" preserveAspectRatio="xMidYMid meet">
+  <div class="transform text-right -z-1 translate-y-12">
+     <svg xmlns="http://www.w3.org/2000/svg" class="svg-2 stroke-current text-red" viewBox="0 0 300 125" preserveAspectRatio="xMidYMid meet">
       <path d="M248,62 C0,0 390,22 19,32" />
     </svg>
-    <span class="font-bungee text-9xl uppercase text-black">a</span>
   </div>
-  <div class="transform scale-110 col-span-2 -translate-y-12 -rotate-12 translate-x-12">
-    <span class="font-bungee text-9xl uppercase text-black">flower</span>
+  <div class="transform col-span-2 translate-y-40 pl-24 leading-4 -rotate-12 -z-1">
+    <span class="font-platelet-heavy text-11xl uppercase text-black">sustainable</span>
   </div>
-  <div class="transform scale-150 rotate-12 col-span-2 -translate-x-60 -translate-y-32 text-right">
-    <span class="font-bungee text-9xl uppercase text-black">shop</span>
+  <div class="transform col-span-2 translate-y-4 -translate-x-28 text-right -z-1">
+    <span class="font-platelet-heavy text-10xl uppercase text-black">florist</span>
   </div>
 </div>
 

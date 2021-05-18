@@ -1,0 +1,170 @@
+<div class="flex flex-wrap justify-around">
+  <a href="/pages/vendors">
+    <button class="w-40 bg-red text-cream px-6 py-3 text-2xl font-platelet-heavy tracking-wider rounded hover:bg-black">Vendors</button>
+  </a>
+  <a href="/blogs/news">
+    <button class="w-40 bg-red text-cream px-6 py-3 text-2xl font-platelet-heavy tracking-wider rounded hover:bg-black">Blog</button>
+  </a>
+</div>
+<hr class="mt-12 mb-12">
+<div class="flex flex-wrap">
+  <div class="flex flex-col w-full md:w-6/12 pl-6 pr-6">
+    <img alt="{{ section.settings.first_image.alt | escape }}" src="{{ section.settings.first_image | img_url: '300x' }}" data-src="{{ section.settings.first_image | img_url: 'master' }}" class="w-full lazyload" />
+
+    <hr class="mt-12 mb-12">
+
+    <h2 class="text-4xl font-ubuntu-heavy text-center">Just Some of Our Clients…</h1>
+
+    <div class="body grid grid-flow-row grid-rows-6 grid-cols-3 gap-6 p-6 items-center rounded-lg bg-white">
+      {% for block in section.blocks %}
+        <img alt="{{ block.settings.image.alt | escape }}" src="{{ block.settings.image | img_url: '100x' }}" data-src="{{ block.settings.image | img_url: 'master' }}" class="w-full lazyload" />
+      {% endfor %}
+    </div>
+
+    <hr class="mt-12 mb-12">
+
+    <h2 class="text-3xl font-ubuntu">“I’m your florist. I care about how long your flowers last, where they come from, who harvests them, how they’re preserved, and the waste associated, so that you don’t have to.”</h2>
+
+    <hr class="mt-12 mb-12">
+
+    <img alt="{{ section.settings.third_image.alt | escape }}" src="{{ section.settings.third_image | img_url: '300x' }}" data-src="{{ section.settings.third_image | img_url: 'master' }}" class="w-full lazyload" />
+
+  </div>
+
+  <div class="flex flex-col w-full md:w-6/12 pl-6 pr-6">
+    <h1 class="text-4xl font-ubuntu-heavy">Coy & Co. provides true-to-you curatorial floral design to Portland, OR and beyond.</h1>
+
+    <p class="body">
+      We believe that being true-to-you means being true to our future as a community and preserving the planet for generations to come. That’s why we became
+      <span class="font-ubuntu-heavy">Portland’s First Sustainably Certified Florist.</span>
+      That means we care about where your flowers come from, how they got here, and how we treat them.
+    </p>
+
+    <p class="body">Some of the ways that we reduce our carbon footprint in the floral industry:</p>
+
+    <ul class="body list-disc pl-8">
+      <li>We use 100% Locally Grown Fresh & Dried Flowers & Foliage, all year, regardless of availability. We define local as a place you can drive to and from in less than a day.</li>
+      <li>All of our flowers are biodegradable & non-toxic, that means they’ll never be dyed, bleached, or preserved with toxic chemicals.</li>
+      <li>We compost locally and diligently. We include clean-up services in our event work to ensure responsible disposal and reuse of materials.</li>
+      <li>We never use or buy single-use plastic or materials wrapped in single-use plastic.</li>
+      <li>We love being <a target="_blank" href="https://www.portlandoregon.gov/bes/52501" class="text-red">Green Street Stewards!</a>
+      <li>All preservatives and cleansers are biodegradable, non-toxic, and refillable.</li>
+    </ul>
+
+    <hr class="mt-12 mb-12">
+
+    <h2 class="text-3xl font-ubuntu">“ When you buy from me, you’re not just supporting one small sustainable woman-owned business, you’re supporting an entire network of them.™ ”</h2>
+
+    <hr class="mt-12 mb-12">
+
+    <img alt="{{ section.settings.second_image.alt | escape }}" src="{{ section.settings.second_image | img_url: '300x' }}" data-src="{{ section.settings.second_image | img_url: 'master' }}" class="w-full lazyload" />
+  </div>
+  <div>
+    <h2 class="text-4xl font-ubuntu">From our Founder:</h2>
+    <p class="body">“I’m your florist. I care about how long your flowers last, where they come from, who harvests them, how they’re preserved, the waste associated, so that you don’t have to. </p>
+    <p class="body">I go out of my way to make sure you’re not only getting the best quality, but that your carbon footprint isn’t bigger than it needs to be. I use biodegradable cleansers, I never use floral foam, I wrap your bouquets in compostable paper, I buy local, I dry my overstock to be reused in winter, I use recycled newspapers for transport packing, I use zero preservatives, I do garden &amp; farm walkthroughs to ask the questions most won’t ask (do you use pesticides, are these roses salmon-safe, who do you hire, how are they treated?).</p>
+    <p class="body">Why do I do all of this? Why does it matter? Because the international floral industry has one of the largest agricultural carbon footprints. From Dutch hot-houses to jets full of roses sent from Ecuador, unnecessary waste is astronomical and plain silly when considering what is available locally. </p>
+    <p class="body">The Pacific Northwest is packed with family-owned farms that painstakingly select the best varieties and cultivate them year-round in the hopes to provide the best products to their customers. When you buy from me, you’re not just supporting one small sustainable woman-owned business, you’re supporting an entire network of them. From Peterkort Roses in Hillsboro, to Indigo Gardens in East Portland, to Small Yard Flowers in St.Johns, to Elevine Floral in Canby... there is more than enough local farms to provide breath-taking, artful floral arrangements year-round. Enough guilt-free flowers to have them fresh on your kitchen table, every week.”</p>
+    <p class="body">Founder &amp; Curator </p>
+    <p class="body">Coy &amp; Co. Curatorial Floral</p>
+  </div>
+
+  <hr class="mt-12 mb-12 w-full">
+
+  <div class="flex flex-col w-full relative md:w-6/12 pl-6 pr-6">
+    <a target="_blank" href="{{ section.settings.video_first_link }}">
+      <h2 class="text-4xl font-ubuntu text-center">{{ section.settings.video_first_text }}</h2>
+      <img alt="{{ section.settings.video_first_image.alt | escape }}" src="{{ section.settings.video_first_image | img_url: '300x' }}" data-src="{{ section.settings.video_first_image | img_url: 'master' }}" class="w-full lazyload" />
+      <img alt="{{ section.settings.play_image.alt | escape }}" src="{{ section.settings.play_image | img_url: '50x' }}" data-src="{{ section.settings.play_image | img_url: 'master' }}" class="lazyload w-20 absolute transform -translate-x-1/2 -translate-y-1/2 inset-2/4" />
+    </a>
+  </div>
+
+  <div class="flex flex-col w-full relative md:w-6/12 pl-6 pr-6">
+    <a target="_blank" href="{{ section.settings.video_second_link }}">
+      <h2 class="text-4xl font-ubuntu text-center">{{ section.settings.video_second_text }}</h2>
+      <img alt="{{ section.settings.video_second_image.alt | escape }}" src="{{ section.settings.video_second_image | img_url: '300x' }}" data-src="{{ section.settings.video_second_image | img_url: 'master' }}" class="w-full lazyload" />
+      <img alt="{{ section.settings.play_image.alt | escape }}" src="{{ section.settings.play_image | img_url: '50x' }}" data-src="{{ section.settings.play_image | img_url: 'master' }}" class="lazyload w-20 absolute transform -translate-x-1/2 -translate-y-1/2 inset-2/4" />
+    </a>
+  </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "About Us",
+    "class": "mt-20 mb-20 max-w-screen-xl mx-auto",
+    "settings": [
+      {
+        "type": "header",
+        "content": "About Us"
+      },
+      {
+        "type": "image_picker",
+        "id": "first_image",
+        "label": "First Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "second_image",
+        "label": "Second Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "third_image",
+        "label": "Third Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "play_image",
+        "label": "Play Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "video_first_image",
+        "label": "First Video Image"
+      },
+      {
+        "type": "text",
+        "id": "video_first_text",
+        "label": "First Video Text"
+      },
+      {
+        "type": "url",
+        "id": "video_first_link",
+        "label": "First Video Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "video_second_image",
+        "label": "Second Video Image"
+      },
+      {
+        "type": "text",
+        "id": "video_second_text",
+        "label": "First Video Text"
+      },
+      {
+        "type": "url",
+        "id": "video_second_link",
+        "label": "First Video Text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Logo",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Client Logo"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+	  ]
+  }
+{% endschema %}

@@ -3,3 +3,32 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Platelet;
+    src: url('Platelet.woff') format('woff'),
+      url('Platelet.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: Platelet Heavy;
+    font-weight: 500;
+    src: url('PlateletHeavy.woff') format('woff'),
+      url('PlateletHeavy.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: Ubuntu;
+    src: url('Ubuntu.woff') format('woff'),
+      url('Ubuntu.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: Ubuntu Heavy;
+    font-weight: 500;
+    src: url('UbuntuHeavy.woff') format('woff'),
+      url('UbuntuHeavy.woff2') format('woff2');
+  }
+}
+
+.body {
+  @apply text-xl font-ubuntu my-4;
+}

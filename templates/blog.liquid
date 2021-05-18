@@ -1,20 +1,22 @@
-{% paginate blog.articles by 5 %}
-
-<h1>{{ blog.title }}</h1>
-{% for article in blog.articles %}
-  <div>
-    <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
-    {{ article.author }} @ {{ article.created_at }}
-    <div>
-      {% if article.excerpt.size > 0 %}
-        {{ article.excerpt }}
-      {% else %}
-        <p>{{ article.content | strip_html | truncatewords: 100 }}</p>
-      {% endif %}
+{% paginate blog.articles by 12 %}
+<div class="flex flex-wrap mt-20 mb-20 max-w-screen-xl mx-auto">
+  <h1 class="text-4xl w-full font-ubuntu-heavy text-center mb-12">{{ blog.title }}</h1>
+  {% for article in blog.articles %}
+    <div class="w-full md:w-4/12 pl-6 pr-6">
+      <a href="{{ article.url }}">
+        <h2 class="text-2xl font-ubuntu-heavy text-center mb-12">{{ article.title }}</h2>
+        <div>
+          <img alt="{{ article.image.alt }}" src="{{ article.image.src | img_url: '300x' }}" data-src="{{ article.image.src | img_url: 'master' }}" class="w-full lazyload" />
+          {% if article.excerpt.size > 0 %}
+            <div class="body">{{ article.excerpt }}</div>
+          {% else %}
+            <div class="body">{{ article.content | strip_html | truncatewords: 100 }}</div>
+          {% endif %}
+        </div>
+      </a>
     </div>
-  </div>
-{% endfor %}
-
+  {% endfor %}
+</div>
 {% if paginate.pages > 1 %}
   {{ paginate | default_pagination }}
 {% endif %}

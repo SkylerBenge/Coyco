@@ -27,22 +27,31 @@
       {% endif %}
       <li class={{ nav_classes }}>
         <a href="{{ link.url }}">
-          <button class="bg-black text-cream px-4 py-2 text-xl font-bungee-inline tracking-wider text-white rounded hover:bg-red hover:text-black">{{ link.title }}</button>
+          <button class="bg-black text-cream px-6 py-3 text-2xl font-platelet-heavy tracking-wider text-white rounded hover:bg-red hover:text-black">{{ link.title }}</button>
         </a>
       </li>
       {% endif %}
     {% endfor %}
   </ul>
 
+  {% comment %}
   <div class="z-1">
     <a href="/" class="inline-block">{% include 'logo' %}</a>
   </div>
+  {% endcomment %}
+  <div class="m-auto pl-3 pr-3 max-w-screen-2xl leading-4">
+    <div class="transform -rotate-6 col-span-2 text-center">
+      <span class="font-platelet-heavy text-11xl uppercase text-black -z-1"><a href="/">Coy & CO.</a></span>
+    </div>
+  </div>
 
   <div class="transform z-1 relative -translate-x-20">
+    {% unless template == 'index' and cart.item_count == 0 %}
     <a href="/cart" class="inline-block w-16">{% include 'cart-icon' %}</a>
     <div id="CartCount" class="absolute bottom-0 right-0 px-2 bg-black text-cream rounded {% if cart.item_count == 0 %} hidden{% endif %}">
-      <span class="font-bungee text-sm">{{ cart.item_count }}</span>
+      <span class="font-platelet-heavy text-sm">{{ cart.item_count }}</span>
     </div>
+    {% endunless %}
 
     {% if shop.customer_accounts_enabled %}
       {% if customer %}
