@@ -1,0 +1,98 @@
+<style>
+.squiggle-wrapper {
+  overflow: hidden;
+  height: calc(100% - 240px);
+}
+
+.squiggle-wrapper svg polyline,
+.squiggle-wrapper svg line,
+.squiggle-wrapper svg path {
+  fill: none;
+  transition: 0.2s;
+  stroke-width: 16;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  color: #cc3c38;
+}
+
+.squiggle-wrapper svg pattern path, .squiggle-wrapper svg line {
+  stroke-width: 20px;
+}
+
+.squiggle-wrapper svg {
+  height:100%;
+  width: 200px;
+}
+
+.left-squiggle {
+  left: -11vw;
+  position: absolute;
+}
+  @media (max-width: 1700px) {
+    .left-squiggle {
+      left: -9vw;
+    }
+  }
+
+.right-squiggle {
+  right: -16vw;
+  position: absolute;
+}
+  @media (max-width: 1700px) {
+    .right-squiggle {
+      right: -10vw;
+    }
+  }
+
+</style>
+<div class="hidden 2xl:block squiggle-wrapper left-squiggle">
+  <svg viewBox="0 0 1 1" overflow="visible">
+    <pattern id="wavy" viewBox="0 0 100 600" height="2" width="1" patternUnits="userSpaceOnUse">
+      <path d="M46,117 C102,52 7,385 12,21">
+        <animate attributeName="d" begin="0s" dur="8s"
+        values="M46,117 C102,52 7,385 12,21;
+                M19,209 C44,174 8,67 59,45;
+                M46,117 C102,52 7,385 12,21"
+        keySplines=".42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;"
+        repeatCount="indefinite"
+        />
+      </path>
+      <path d="M60,474 C32,99 191,349 22,305">
+        <animate attributeName="d" begin="0s" dur="10s"
+        values="M60,474 C32,99 191,349 22,305;
+                M60,474 C121,291 7,385 22,305;
+                M60,474 C32,99 191,349 22,305"
+        keySplines=".42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;"
+        repeatCount="indefinite"
+        />
+      </path>
+    </pattern>
+    <rect fill="url(#wavy)" x="0" y="-20" width="1" height="100"></rect>
+  </svg>
+</div>
+<div class="squiggle-wrapper right-squiggle">
+  <svg viewBox="0 0 1 1" overflow="visible">
+    <pattern id="wavy" viewBox="0 0 100 600" height="2" width="1" patternUnits="userSpaceOnUse">
+      <path d="M46,117 C102,52 7,385 12,21">
+        <animate attributeName="d" begin="0s" dur="8s"
+        values="M46,117 C102,52 7,385 12,21;
+                M19,209 C44,174 8,67 59,45;
+                M46,117 C102,52 7,385 12,21"
+        keySplines=".42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;"
+        repeatCount="indefinite"
+        />
+      </path>
+      <path d="M60,474 C32,99 191,349 22,305">
+        <animate attributeName="d" begin="0s" dur="10s"
+        values="M60,474 C32,99 191,349 22,305;
+                M60,474 C121,291 7,385 22,305;
+                M60,474 C32,99 191,349 22,305"
+        keySplines=".42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;"
+        repeatCount="indefinite"
+        />
+      </path>
+    </pattern>
+    <rect fill="url(#wavy)" x="0" y="-20" width="1" height="200"></rect>
+  </svg>
+</div>

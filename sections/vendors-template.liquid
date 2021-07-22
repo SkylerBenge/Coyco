@@ -1,36 +1,39 @@
+{% include 'about-nav' %}
+{% include 'squiggle-border' %}
+<h1 class="heading">{{ page.title }}</h1>
 <div>
   {% for block in section.blocks %}
     {% if block.settings.category != blank %}
-      <h1 class="text-4xl w-full text-center font-ubuntu-heavy text-center mb-12">{{ block.settings.category }}</h1>
+      <h1 class="subhead-heavy">{{ block.settings.category }}</h1>
     {% endif %}
-    <div class="flex">
+    <div class="flex flex-wrap">
       {% if block.settings.image_location == "left" %}
         <div class="w-full md:w-4/12 pl-6 pr-6">
-          <img alt="{{ block.settings.image.alt | escape }}" src="{{ block.settings.image | img_url: '300x' }}" data-src="{{ block.settings.image | img_url: 'master' }}" class="w-full lazyload" />
+          <img alt="{{ block.settings.image.alt | escape }}" src="{{ block.settings.image | img_url: '300x' }}" data-src="{{ block.settings.image | img_url: 'master' }}" class="w-full lazyload rounded-sm" />
         </div>
       {% endif %}
 
       <div class="w-full md:w-8/12 pl-6 pr-6">
-        <h3 class="text-2xl font-ubuntu-heavy mb-6">{{ block.settings.name }}</h3>
+        <h3 class="subhead">{{ block.settings.name }}</h3>
         <div class="body">{{ block.settings.info }}</div>
-        <p class="font-ubuntu-heavy body">Read More: <a class="text-red" target="_blank" href="{{ block.settings.link }}">{{ block.settings.link_text }}</a></p>
+        <p class="font-dunbar-tall body">Read More: <a class="text-red" target="_blank" href="{{ block.settings.link }}">{{ block.settings.link_text }}</a></p>
         <div class="body">{{ block.settings.info_2 }}</div>
       </div>
 
       {% if block.settings.image_location == "right" %}
         <div class="w-full md:w-4/12 pl-6 pr-6">
-          <img alt="{{ block.settings.image.alt | escape }}" src="{{ block.settings.image | img_url: '300x' }}" data-src="{{ block.settings.image | img_url: 'master' }}" class="w-full lazyload" />
+          <img alt="{{ block.settings.image.alt | escape }}" src="{{ block.settings.image | img_url: '300x' }}" data-src="{{ block.settings.image | img_url: 'master' }}" class="w-full lazyload rounded-sm" />
         </div>
       {% endif %}
     </div>
-    <hr class="mt-12 mb-12">
+    <hr class="mt-8 mb-8 w-full border-2 border-red bg-red">
   {% endfor %}
 </div>
 
 {% schema %}
   {
     "name": "Vendors",
-    "class": "mt-20 mb-20 max-w-screen-xl mx-auto",
+    "class": "mt-20 mb-20 max-w-screen-xl mx-auto relative",
     "settings": [
     ],
     "blocks": [

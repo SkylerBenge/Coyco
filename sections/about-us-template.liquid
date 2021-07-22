@@ -1,42 +1,38 @@
-<div class="flex flex-wrap justify-around">
-  <a href="/pages/vendors">
-    <button class="w-40 bg-red text-cream px-6 py-3 text-2xl font-platelet-heavy tracking-wider rounded hover:bg-black">Vendors</button>
-  </a>
-  <a href="/blogs/news">
-    <button class="w-40 bg-red text-cream px-6 py-3 text-2xl font-platelet-heavy tracking-wider rounded hover:bg-black">Blog</button>
-  </a>
-</div>
-<hr class="mt-12 mb-12">
+{% include 'about-nav' %}
+{% include 'squiggle-border' %}
+<h1 class="heading">{{ page.title }}</h1>
 <div class="flex flex-wrap">
   <div class="flex flex-col w-full md:w-6/12 pl-6 pr-6">
-    <img alt="{{ section.settings.first_image.alt | escape }}" src="{{ section.settings.first_image | img_url: '300x' }}" data-src="{{ section.settings.first_image | img_url: 'master' }}" class="w-full lazyload" />
+    <img alt="{{ section.settings.first_image.alt | escape }}" src="{{ section.settings.first_image | img_url: '300x' }}" data-src="{{ section.settings.first_image | img_url: 'master' }}" class="w-full lazyload rounded-lg" />
 
-    <hr class="mt-12 mb-12">
+    <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
 
-    <h2 class="text-4xl font-ubuntu-heavy text-center">Just Some of Our Clients…</h1>
+    <h2 class="subhead-heavy">Just Some of Our Clients…</h1>
 
-    <div class="body grid grid-flow-row grid-rows-6 grid-cols-3 gap-6 p-6 items-center rounded-lg bg-white">
+    <div class="body grid grid-flow-row grid-rows-4 grid-cols-3 gap-6 p-6 items-center rounded-lg">
       {% for block in section.blocks %}
-        <img alt="{{ block.settings.image.alt | escape }}" src="{{ block.settings.image | img_url: '100x' }}" data-src="{{ block.settings.image | img_url: 'master' }}" class="w-full lazyload" />
+        {% if block.type == "image" %}
+          <img alt="{{ block.settings.image.alt | escape }}" src="{{ block.settings.image | img_url: '100x' }}" data-src="{{ block.settings.image | img_url: 'master' }}" class="w-full lazyload" />
+        {% endif %}
       {% endfor %}
     </div>
 
-    <hr class="mt-12 mb-12">
+    <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
 
-    <h2 class="text-3xl font-ubuntu">“I’m your florist. I care about how long your flowers last, where they come from, who harvests them, how they’re preserved, and the waste associated, so that you don’t have to.”</h2>
+    <h2 class="text-3xl subhead">“I’m your florist. I care about how long your flowers last, where they come from, who harvests them, how they’re preserved, and the waste associated, so that you don’t have to.”</h2>
 
-    <hr class="mt-12 mb-12">
+    <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
 
-    <img alt="{{ section.settings.third_image.alt | escape }}" src="{{ section.settings.third_image | img_url: '300x' }}" data-src="{{ section.settings.third_image | img_url: 'master' }}" class="w-full lazyload" />
+    <img alt="{{ section.settings.third_image.alt | escape }}" src="{{ section.settings.third_image | img_url: '300x' }}" data-src="{{ section.settings.third_image | img_url: 'master' }}" class="w-full lazyload animate-bounce" />
 
   </div>
 
   <div class="flex flex-col w-full md:w-6/12 pl-6 pr-6">
-    <h1 class="text-4xl font-ubuntu-heavy">Coy & Co. provides true-to-you curatorial floral design to Portland, OR and beyond.</h1>
+    <h1 class="subhead-heavy">Coy & Co. provides true-to-you curatorial floral design to Portland, OR and beyond.</h1>
 
     <p class="body">
       We believe that being true-to-you means being true to our future as a community and preserving the planet for generations to come. That’s why we became
-      <span class="font-ubuntu-heavy">Portland’s First Sustainably Certified Florist.</span>
+      <span class="font-extrabold">Portland’s First Sustainably Certified Florist.</span>
       That means we care about where your flowers come from, how they got here, and how we treat them.
     </p>
 
@@ -51,16 +47,16 @@
       <li>All preservatives and cleansers are biodegradable, non-toxic, and refillable.</li>
     </ul>
 
-    <hr class="mt-12 mb-12">
+    <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
 
-    <h2 class="text-3xl font-ubuntu">“ When you buy from me, you’re not just supporting one small sustainable woman-owned business, you’re supporting an entire network of them.™ ”</h2>
+    <h2 class="subhead">“ When you buy from me, you’re not just supporting one small sustainable woman-owned business, you’re supporting an entire network of them.™ ”</h2>
 
-    <hr class="mt-12 mb-12">
+    <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
 
-    <img alt="{{ section.settings.second_image.alt | escape }}" src="{{ section.settings.second_image | img_url: '300x' }}" data-src="{{ section.settings.second_image | img_url: 'master' }}" class="w-full lazyload" />
+    <img alt="{{ section.settings.second_image.alt | escape }}" src="{{ section.settings.second_image | img_url: '300x' }}" data-src="{{ section.settings.second_image | img_url: 'master' }}" class="w-full lazyload rounded-3xl" />
   </div>
-  <div>
-    <h2 class="text-4xl font-ubuntu">From our Founder:</h2>
+  <div class="px-6">
+    <h2 class="heading">From our Founder:</h2>
     <p class="body">“I’m your florist. I care about how long your flowers last, where they come from, who harvests them, how they’re preserved, the waste associated, so that you don’t have to. </p>
     <p class="body">I go out of my way to make sure you’re not only getting the best quality, but that your carbon footprint isn’t bigger than it needs to be. I use biodegradable cleansers, I never use floral foam, I wrap your bouquets in compostable paper, I buy local, I dry my overstock to be reused in winter, I use recycled newspapers for transport packing, I use zero preservatives, I do garden &amp; farm walkthroughs to ask the questions most won’t ask (do you use pesticides, are these roses salmon-safe, who do you hire, how are they treated?).</p>
     <p class="body">Why do I do all of this? Why does it matter? Because the international floral industry has one of the largest agricultural carbon footprints. From Dutch hot-houses to jets full of roses sent from Ecuador, unnecessary waste is astronomical and plain silly when considering what is available locally. </p>
@@ -68,31 +64,38 @@
     <p class="body">Founder &amp; Curator </p>
     <p class="body">Coy &amp; Co. Curatorial Floral</p>
   </div>
-
-  <hr class="mt-12 mb-12 w-full">
-
-  <div class="flex flex-col w-full relative md:w-6/12 pl-6 pr-6">
-    <a target="_blank" href="{{ section.settings.video_first_link }}">
-      <h2 class="text-4xl font-ubuntu text-center">{{ section.settings.video_first_text }}</h2>
-      <img alt="{{ section.settings.video_first_image.alt | escape }}" src="{{ section.settings.video_first_image | img_url: '300x' }}" data-src="{{ section.settings.video_first_image | img_url: 'master' }}" class="w-full lazyload" />
-      <img alt="{{ section.settings.play_image.alt | escape }}" src="{{ section.settings.play_image | img_url: '50x' }}" data-src="{{ section.settings.play_image | img_url: 'master' }}" class="lazyload w-20 absolute transform -translate-x-1/2 -translate-y-1/2 inset-2/4" />
-    </a>
+</div>
+<div>
+  <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
+  <h2 class="heading">In the press</h2>
+  <div class="flex flex-wrap items-end">
+    {% for block in section.blocks %}
+      {% if block.type == "text" %}
+        <div class="flex flex-col w-full md:w-6/12 px-6 mb-6">
+          <a target="_blank" href="{{ block.settings.article_link }}">
+            <h2 class="subhead-heavy">{{ block.settings.article_text }}</h2>
+            <div class="relative">
+              <img alt="{{ block.settings.article_image.alt | escape }}" src="{{ block.settings.article_image | img_url: '300x' }}" data-src="{{ block.settings.article_image | img_url: 'master' }}" class="w-full lazyload" />
+              {% if block.settings.is_video %}
+                <img alt="{{ section.settings.play_image.alt | escape }}" src="{{ section.settings.play_image | img_url: '50x' }}" data-src="{{ section.settings.play_image | img_url: 'master' }}" class="lazyload w-20 absolute transform -translate-x-1/2 -translate-y-1/2 inset-2/4" />
+              {% endif %}
+            </div>
+          </a>
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 
-  <div class="flex flex-col w-full relative md:w-6/12 pl-6 pr-6">
-    <a target="_blank" href="{{ section.settings.video_second_link }}">
-      <h2 class="text-4xl font-ubuntu text-center">{{ section.settings.video_second_text }}</h2>
-      <img alt="{{ section.settings.video_second_image.alt | escape }}" src="{{ section.settings.video_second_image | img_url: '300x' }}" data-src="{{ section.settings.video_second_image | img_url: 'master' }}" class="w-full lazyload" />
-      <img alt="{{ section.settings.play_image.alt | escape }}" src="{{ section.settings.play_image | img_url: '50x' }}" data-src="{{ section.settings.play_image | img_url: 'master' }}" class="lazyload w-20 absolute transform -translate-x-1/2 -translate-y-1/2 inset-2/4" />
-    </a>
-  </div>
-  </div>
+  <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
+
+  <h2 class="heading text-center">What we've been up to...</h2>
+  {% include 'instagram-feed' %}
 </div>
 
 {% schema %}
   {
     "name": "About Us",
-    "class": "mt-20 mb-20 max-w-screen-xl mx-auto",
+    "class": "mt-20 mb-20 max-w-screen-xl mx-auto relative",
     "settings": [
       {
         "type": "header",
@@ -117,36 +120,6 @@
         "type": "image_picker",
         "id": "play_image",
         "label": "Play Image"
-      },
-      {
-        "type": "image_picker",
-        "id": "video_first_image",
-        "label": "First Video Image"
-      },
-      {
-        "type": "text",
-        "id": "video_first_text",
-        "label": "First Video Text"
-      },
-      {
-        "type": "url",
-        "id": "video_first_link",
-        "label": "First Video Text"
-      },
-      {
-        "type": "image_picker",
-        "id": "video_second_image",
-        "label": "Second Video Image"
-      },
-      {
-        "type": "text",
-        "id": "video_second_text",
-        "label": "First Video Text"
-      },
-      {
-        "type": "url",
-        "id": "video_second_link",
-        "label": "First Video Text"
       }
     ],
     "blocks": [
@@ -162,6 +135,32 @@
             "type": "image_picker",
             "id": "image",
             "label": "Image"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "Article",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "is_video",
+            "label": "Video?"
+          },
+          {
+            "type": "image_picker",
+            "id": "article_image",
+            "label": "Article Image"
+          },
+          {
+            "type": "text",
+            "id": "article_text",
+            "label": "Article Text"
+          },
+          {
+            "type": "url",
+            "id": "article_link",
+            "label": "Article Link"
           }
         ]
       }

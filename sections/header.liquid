@@ -1,5 +1,7 @@
-<nav class="flex items-center justify-between flex-wrap p-6">
-  <ul class="max-w-max">
+<div class="hidden bg-cream z-2 absolute h-full w-72 mobile-nav__background"></div>
+<nav class="flex relative items-start md:items-center md:justify-between flex-wrap py-6 sm:px-6">
+  <button class="w-10 mobile-nav__button z-2 md:hidden">{% include 'menu-icon' %}</button>
+  <ul class="transition duration-500 nav__links max-w-max absolute z-2 md:static -top-80 left-20">
     {% for link in linklists.main-menu.links %}
       {% assign child_list_handle = link.title | handleize %}
       {% if linklists[child_list_handle].links != blank %}
@@ -14,38 +16,33 @@
       {% else %}
       {% if forloop.index == 1 %}
         {% capture nav_classes %}
-          "transform translate-x-20"
+          "transform translate-x-5 lg:translate-x-20"
         {% endcapture %}
       {% elsif forloop.index == 2 %}
         {% capture nav_classes %}
-          "transform rotate-6 translate-x-16 translate-y-4"
+          "transform rotate-6 translate-x-4 lg:translate-x-16 translate-y-4"
         {% endcapture %}
       {% elsif forloop.index == 3 %}
         {% capture nav_classes %}
-          "transform rotate-12 translate-x-12 translate-y-8"
+          "transform rotate-12 translate-x-1 lg:translate-x-12 translate-y-8"
         {% endcapture %}
       {% endif %}
       <li class={{ nav_classes }}>
         <a href="{{ link.url }}">
-          <button class="bg-black text-cream px-6 py-3 text-2xl font-platelet-heavy tracking-wider text-white rounded hover:bg-red hover:text-black">{{ link.title }}</button>
+          <button class="bg-black text-cream px-6 py-3 text-2xl font-dunbar-tall font-semibold tracking-wider text-white rounded hover:bg-red hover:text-black">{{ link.title }}</button>
         </a>
       </li>
       {% endif %}
     {% endfor %}
   </ul>
 
-  {% comment %}
-  <div class="z-1">
-    <a href="/" class="inline-block">{% include 'logo' %}</a>
-  </div>
-  {% endcomment %}
-  <div class="m-auto pl-3 pr-3 max-w-screen-2xl leading-4">
-    <div class="transform -rotate-6 col-span-2 text-center">
-      <span class="font-platelet-heavy text-11xl uppercase text-black -z-1"><a href="/">Coy & CO.</a></span>
+  <div class="mx-auto sm:px-3 max-w-screen-2xl leading-4">
+    <div class="transform -rotate-6 xl:translate-y-16 col-span-2 text-center">
+      <span class="font-dunbar-tall font-extrabold text-14vw md:text-10vw uppercase text-black -z-1"><a href="/">Coy & CO.</a></span>
     </div>
   </div>
 
-  <div class="transform z-1 relative -translate-x-20">
+  <div class="w-10 sm:w-auto transform z-1 relative -translate-x-1 sm:-translate-x-5 lg:-translate-x-20">
     {% unless template == 'index' and cart.item_count == 0 %}
     <a href="/cart" class="inline-block w-16">{% include 'cart-icon' %}</a>
     <div id="CartCount" class="absolute bottom-0 right-0 px-2 bg-black text-cream rounded {% if cart.item_count == 0 %} hidden{% endif %}">
@@ -64,3 +61,17 @@
     {% endif %}
   </div>
 </nav>
+
+<script>
+  $('.mobile-nav__button').click(function() {
+    $('.mobile-nav__background').slideToggle("fast");
+    if ( $(this).hasClass("isDown") ) {
+      $('.nav__links').animate({top: "-=344"}, 250);
+    } else {
+      $('.nav__links').animate({top: "+=344"}, 500);
+    }
+
+    $(this).toggleClass("isDown");
+    return false;
+  });
+</script>

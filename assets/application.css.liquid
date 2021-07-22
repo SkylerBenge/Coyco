@@ -1,6 +1,4 @@
-/* purgecss start ignore */
-
-/* ! tailwindcss v2.1.2 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v2.1.2 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -553,38 +551,6 @@ video {
   height: auto;
 }
 
-@font-face {
-  font-family: Platelet;
-
-  src: url('Platelet.woff') format('woff'),
-      url('Platelet.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: Platelet Heavy;
-
-  font-weight: 500;
-
-  src: url('PlateletHeavy.woff') format('woff'),
-      url('PlateletHeavy.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: Ubuntu;
-
-  src: url('Ubuntu.woff') format('woff'),
-      url('Ubuntu.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: Ubuntu Heavy;
-
-  font-weight: 500;
-
-  src: url('UbuntuHeavy.woff') format('woff'),
-      url('UbuntuHeavy.woff2') format('woff2');
-}
-
 .container {
   width: 100%;
 }
@@ -618,8 +584,6 @@ video {
     max-width: 1536px;
   }
 }
-
-/* purgecss end ignore */
 
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -4023,20 +3987,16 @@ video {
   clear: none;
 }
 
-.font-platelet {
-  font-family: Platelet, cursive;
+.font-sans {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.font-platelet-heavy {
-  font-family: Platelet Heavy, cursive;
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
-.font-ubuntu {
-  font-family: Ubuntu, cursive;
-}
-
-.font-ubuntu-heavy {
-  font-family: Ubuntu Heavy, cursive;
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .font-thin {
@@ -4349,6 +4309,86 @@ video {
 
 .text-12xl {
   font-size: 14rem;
+}
+
+.text-1vw {
+  font-size: 1vw;
+}
+
+.text-2vw {
+  font-size: 2vw;
+}
+
+.text-3vw {
+  font-size: 3vw;
+}
+
+.text-4vw {
+  font-size: 4vw;
+}
+
+.text-5vw {
+  font-size: 5vw;
+}
+
+.text-6vw {
+  font-size: 6vw;
+}
+
+.text-7vw {
+  font-size: 7vw;
+}
+
+.text-8vw {
+  font-size: 8vw;
+}
+
+.text-9vw {
+  font-size: 9vw;
+}
+
+.text-10vw {
+  font-size: 10vw;
+}
+
+.text-11vw {
+  font-size: 11vw;
+}
+
+.text-12vw {
+  font-size: 12vw;
+}
+
+.text-13vw {
+  font-size: 13vw;
+}
+
+.text-14vw {
+  font-size: 14vw;
+}
+
+.text-15vw {
+  font-size: 15vw;
+}
+
+.text-16vw {
+  font-size: 16vw;
+}
+
+.text-17vw {
+  font-size: 17vw;
+}
+
+.text-18vw {
+  font-size: 18vw;
+}
+
+.text-19vw {
+  font-size: 19vw;
+}
+
+.text-20vw {
+  font-size: 20vw;
 }
 
 .leading-1 {
@@ -18394,11 +18434,77 @@ video {
   --tw-backdrop-sepia: sepia(100%);
 }
 
+.heading {
+  font-weight: 800;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(34, 34, 34, var(--tw-text-opacity));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 8rem;
+  }
+}
+
+.heading {
+  font-family:"dunbar-tall", sans-serif;
+}
+
+.subhead {
+  font-weight: 600;
+  font-size: 1.875rem;
+  --tw-text-opacity: 1;
+  color: rgba(34, 34, 34, var(--tw-text-opacity));
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 1024px) {
+  .subhead {
+    font-size: 2.25rem;
+  }
+}
+
+.subhead {
+  font-family:"dunbar-tall", sans-serif;
+}
+
+.subhead-heavy {
+  font-weight: 800;
+  font-size: 1.875rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(34, 34, 34, var(--tw-text-opacity));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 1024px) {
+  .subhead-heavy {
+    font-size: 2.25rem;
+  }
+}
+
+.subhead-heavy {
+  font-family:"dunbar-tall", sans-serif;
+}
+
 .body {
-  font-family: Ubuntu, cursive;
   font-size: 1.25rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(34, 34, 34, var(--tw-text-opacity));
+  font-family: "ivypresto-text",serif;
+}
+
+.font-dunbar-tall {
+  font-family:"dunbar-tall", sans-serif;
 }
 
 @media (min-width: 640px) {
@@ -21838,20 +21944,16 @@ video {
     clear: none;
   }
 
-  .sm\:font-platelet {
-    font-family: Platelet, cursive;
+  .sm\:font-sans {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .sm\:font-platelet-heavy {
-    font-family: Platelet Heavy, cursive;
+  .sm\:font-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
-  .sm\:font-ubuntu {
-    font-family: Ubuntu, cursive;
-  }
-
-  .sm\:font-ubuntu-heavy {
-    font-family: Ubuntu Heavy, cursive;
+  .sm\:font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .sm\:font-thin {
@@ -22164,6 +22266,86 @@ video {
 
   .sm\:text-12xl {
     font-size: 14rem;
+  }
+
+  .sm\:text-1vw {
+    font-size: 1vw;
+  }
+
+  .sm\:text-2vw {
+    font-size: 2vw;
+  }
+
+  .sm\:text-3vw {
+    font-size: 3vw;
+  }
+
+  .sm\:text-4vw {
+    font-size: 4vw;
+  }
+
+  .sm\:text-5vw {
+    font-size: 5vw;
+  }
+
+  .sm\:text-6vw {
+    font-size: 6vw;
+  }
+
+  .sm\:text-7vw {
+    font-size: 7vw;
+  }
+
+  .sm\:text-8vw {
+    font-size: 8vw;
+  }
+
+  .sm\:text-9vw {
+    font-size: 9vw;
+  }
+
+  .sm\:text-10vw {
+    font-size: 10vw;
+  }
+
+  .sm\:text-11vw {
+    font-size: 11vw;
+  }
+
+  .sm\:text-12vw {
+    font-size: 12vw;
+  }
+
+  .sm\:text-13vw {
+    font-size: 13vw;
+  }
+
+  .sm\:text-14vw {
+    font-size: 14vw;
+  }
+
+  .sm\:text-15vw {
+    font-size: 15vw;
+  }
+
+  .sm\:text-16vw {
+    font-size: 16vw;
+  }
+
+  .sm\:text-17vw {
+    font-size: 17vw;
+  }
+
+  .sm\:text-18vw {
+    font-size: 18vw;
+  }
+
+  .sm\:text-19vw {
+    font-size: 19vw;
+  }
+
+  .sm\:text-20vw {
+    font-size: 20vw;
   }
 
   .sm\:leading-1 {
@@ -39494,20 +39676,16 @@ video {
     clear: none;
   }
 
-  .md\:font-platelet {
-    font-family: Platelet, cursive;
+  .md\:font-sans {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .md\:font-platelet-heavy {
-    font-family: Platelet Heavy, cursive;
+  .md\:font-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
-  .md\:font-ubuntu {
-    font-family: Ubuntu, cursive;
-  }
-
-  .md\:font-ubuntu-heavy {
-    font-family: Ubuntu Heavy, cursive;
+  .md\:font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .md\:font-thin {
@@ -39820,6 +39998,86 @@ video {
 
   .md\:text-12xl {
     font-size: 14rem;
+  }
+
+  .md\:text-1vw {
+    font-size: 1vw;
+  }
+
+  .md\:text-2vw {
+    font-size: 2vw;
+  }
+
+  .md\:text-3vw {
+    font-size: 3vw;
+  }
+
+  .md\:text-4vw {
+    font-size: 4vw;
+  }
+
+  .md\:text-5vw {
+    font-size: 5vw;
+  }
+
+  .md\:text-6vw {
+    font-size: 6vw;
+  }
+
+  .md\:text-7vw {
+    font-size: 7vw;
+  }
+
+  .md\:text-8vw {
+    font-size: 8vw;
+  }
+
+  .md\:text-9vw {
+    font-size: 9vw;
+  }
+
+  .md\:text-10vw {
+    font-size: 10vw;
+  }
+
+  .md\:text-11vw {
+    font-size: 11vw;
+  }
+
+  .md\:text-12vw {
+    font-size: 12vw;
+  }
+
+  .md\:text-13vw {
+    font-size: 13vw;
+  }
+
+  .md\:text-14vw {
+    font-size: 14vw;
+  }
+
+  .md\:text-15vw {
+    font-size: 15vw;
+  }
+
+  .md\:text-16vw {
+    font-size: 16vw;
+  }
+
+  .md\:text-17vw {
+    font-size: 17vw;
+  }
+
+  .md\:text-18vw {
+    font-size: 18vw;
+  }
+
+  .md\:text-19vw {
+    font-size: 19vw;
+  }
+
+  .md\:text-20vw {
+    font-size: 20vw;
   }
 
   .md\:leading-1 {
@@ -57150,20 +57408,16 @@ video {
     clear: none;
   }
 
-  .lg\:font-platelet {
-    font-family: Platelet, cursive;
+  .lg\:font-sans {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .lg\:font-platelet-heavy {
-    font-family: Platelet Heavy, cursive;
+  .lg\:font-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
-  .lg\:font-ubuntu {
-    font-family: Ubuntu, cursive;
-  }
-
-  .lg\:font-ubuntu-heavy {
-    font-family: Ubuntu Heavy, cursive;
+  .lg\:font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .lg\:font-thin {
@@ -57476,6 +57730,86 @@ video {
 
   .lg\:text-12xl {
     font-size: 14rem;
+  }
+
+  .lg\:text-1vw {
+    font-size: 1vw;
+  }
+
+  .lg\:text-2vw {
+    font-size: 2vw;
+  }
+
+  .lg\:text-3vw {
+    font-size: 3vw;
+  }
+
+  .lg\:text-4vw {
+    font-size: 4vw;
+  }
+
+  .lg\:text-5vw {
+    font-size: 5vw;
+  }
+
+  .lg\:text-6vw {
+    font-size: 6vw;
+  }
+
+  .lg\:text-7vw {
+    font-size: 7vw;
+  }
+
+  .lg\:text-8vw {
+    font-size: 8vw;
+  }
+
+  .lg\:text-9vw {
+    font-size: 9vw;
+  }
+
+  .lg\:text-10vw {
+    font-size: 10vw;
+  }
+
+  .lg\:text-11vw {
+    font-size: 11vw;
+  }
+
+  .lg\:text-12vw {
+    font-size: 12vw;
+  }
+
+  .lg\:text-13vw {
+    font-size: 13vw;
+  }
+
+  .lg\:text-14vw {
+    font-size: 14vw;
+  }
+
+  .lg\:text-15vw {
+    font-size: 15vw;
+  }
+
+  .lg\:text-16vw {
+    font-size: 16vw;
+  }
+
+  .lg\:text-17vw {
+    font-size: 17vw;
+  }
+
+  .lg\:text-18vw {
+    font-size: 18vw;
+  }
+
+  .lg\:text-19vw {
+    font-size: 19vw;
+  }
+
+  .lg\:text-20vw {
+    font-size: 20vw;
   }
 
   .lg\:leading-1 {
@@ -74806,20 +75140,16 @@ video {
     clear: none;
   }
 
-  .xl\:font-platelet {
-    font-family: Platelet, cursive;
+  .xl\:font-sans {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .xl\:font-platelet-heavy {
-    font-family: Platelet Heavy, cursive;
+  .xl\:font-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
-  .xl\:font-ubuntu {
-    font-family: Ubuntu, cursive;
-  }
-
-  .xl\:font-ubuntu-heavy {
-    font-family: Ubuntu Heavy, cursive;
+  .xl\:font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .xl\:font-thin {
@@ -75132,6 +75462,86 @@ video {
 
   .xl\:text-12xl {
     font-size: 14rem;
+  }
+
+  .xl\:text-1vw {
+    font-size: 1vw;
+  }
+
+  .xl\:text-2vw {
+    font-size: 2vw;
+  }
+
+  .xl\:text-3vw {
+    font-size: 3vw;
+  }
+
+  .xl\:text-4vw {
+    font-size: 4vw;
+  }
+
+  .xl\:text-5vw {
+    font-size: 5vw;
+  }
+
+  .xl\:text-6vw {
+    font-size: 6vw;
+  }
+
+  .xl\:text-7vw {
+    font-size: 7vw;
+  }
+
+  .xl\:text-8vw {
+    font-size: 8vw;
+  }
+
+  .xl\:text-9vw {
+    font-size: 9vw;
+  }
+
+  .xl\:text-10vw {
+    font-size: 10vw;
+  }
+
+  .xl\:text-11vw {
+    font-size: 11vw;
+  }
+
+  .xl\:text-12vw {
+    font-size: 12vw;
+  }
+
+  .xl\:text-13vw {
+    font-size: 13vw;
+  }
+
+  .xl\:text-14vw {
+    font-size: 14vw;
+  }
+
+  .xl\:text-15vw {
+    font-size: 15vw;
+  }
+
+  .xl\:text-16vw {
+    font-size: 16vw;
+  }
+
+  .xl\:text-17vw {
+    font-size: 17vw;
+  }
+
+  .xl\:text-18vw {
+    font-size: 18vw;
+  }
+
+  .xl\:text-19vw {
+    font-size: 19vw;
+  }
+
+  .xl\:text-20vw {
+    font-size: 20vw;
   }
 
   .xl\:leading-1 {
@@ -92462,20 +92872,16 @@ video {
     clear: none;
   }
 
-  .\32xl\:font-platelet {
-    font-family: Platelet, cursive;
+  .\32xl\:font-sans {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .\32xl\:font-platelet-heavy {
-    font-family: Platelet Heavy, cursive;
+  .\32xl\:font-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
-  .\32xl\:font-ubuntu {
-    font-family: Ubuntu, cursive;
-  }
-
-  .\32xl\:font-ubuntu-heavy {
-    font-family: Ubuntu Heavy, cursive;
+  .\32xl\:font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .\32xl\:font-thin {
@@ -92788,6 +93194,86 @@ video {
 
   .\32xl\:text-12xl {
     font-size: 14rem;
+  }
+
+  .\32xl\:text-1vw {
+    font-size: 1vw;
+  }
+
+  .\32xl\:text-2vw {
+    font-size: 2vw;
+  }
+
+  .\32xl\:text-3vw {
+    font-size: 3vw;
+  }
+
+  .\32xl\:text-4vw {
+    font-size: 4vw;
+  }
+
+  .\32xl\:text-5vw {
+    font-size: 5vw;
+  }
+
+  .\32xl\:text-6vw {
+    font-size: 6vw;
+  }
+
+  .\32xl\:text-7vw {
+    font-size: 7vw;
+  }
+
+  .\32xl\:text-8vw {
+    font-size: 8vw;
+  }
+
+  .\32xl\:text-9vw {
+    font-size: 9vw;
+  }
+
+  .\32xl\:text-10vw {
+    font-size: 10vw;
+  }
+
+  .\32xl\:text-11vw {
+    font-size: 11vw;
+  }
+
+  .\32xl\:text-12vw {
+    font-size: 12vw;
+  }
+
+  .\32xl\:text-13vw {
+    font-size: 13vw;
+  }
+
+  .\32xl\:text-14vw {
+    font-size: 14vw;
+  }
+
+  .\32xl\:text-15vw {
+    font-size: 15vw;
+  }
+
+  .\32xl\:text-16vw {
+    font-size: 16vw;
+  }
+
+  .\32xl\:text-17vw {
+    font-size: 17vw;
+  }
+
+  .\32xl\:text-18vw {
+    font-size: 18vw;
+  }
+
+  .\32xl\:text-19vw {
+    font-size: 19vw;
+  }
+
+  .\32xl\:text-20vw {
+    font-size: 20vw;
   }
 
   .\32xl\:leading-1 {

@@ -1,41 +1,15 @@
-{% assign number_of_comments = article.comments_count %}
-{% if comment and comment.created_at %}
-  {% assign number_of_comments = article.comments_count %}
-{% endif %}
+<div class="mt-20 mb-20 max-w-screen-xl mx-auto">
+  {% include 'about-nav' %}
 
-<h1>{{ article.title }}</h1>
-{% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
-{% capture date %}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{% endcapture %}
-{{ article.author }} @ {{ article.created_at }}
+  <h1 class="subhead-heavy">{{ article.title }}</h1>
 
-<div>{{ article.content }}</div>
-{% if blog.comments_enabled? %}
-  <h2>{{ number_of_comments }} comments</h2>
-  {% paginate article.comments by 5 %}
-    {% for comment in article.comments %}
-      <div>
-        <div>{{ comment.content }}</div>
-        {{ comment.author }} @ {{ comment.created_at }}
-      </div>
-    {% endfor %}
-    {% if paginate.pages > 1 %}
-      {{ paginate | default_pagination }}
-    {% endif %}
-  {% endpaginate %}
-
-  <div>
-    {% form 'new_comment', article %}
-      {{ form.errors | default_errors }}
-      <label for="CommentAuthor">name</label>
-      <input type="text" name="comment[author]" id="CommentAuthor" placeholder="name" value="{{ form.author }}" autocapitalize="words">
-
-      <label for="CommentEmail">email</label>
-      <input type="email" name="comment[email]" id="CommentEmail" placeholder="email" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
-
-      <label for="CommentBody">message</label>
-      <textarea name="comment[body]" id="CommentBody" placeholder="message">{{ form.body }}</textarea>
-
-      <input type="submit" value="post">
-    {% endform %}
+  <div class="flex flex-wrap">
+    <img alt="{{ article.image.alt }}" src="{{ article.image.src | img_url: '500x' }}" data-src="{{ article.image.src | img_url: 'master' }}" class="w-full self-center md:w-4/12 px-6 rounded-md lazyload" />
+    <div class="w-full md:w-8/12 px-6">
+      <div>{{ article.excerpt }}</div>
+    </div>
   </div>
-{% endif %}
+  <div class="grid article-grid">{{ article.content }}</div>
+</div>
+
+{% include 'mosaic' %}

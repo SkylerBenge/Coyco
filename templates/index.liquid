@@ -6,16 +6,22 @@
 #index .svg-2 path{
     animation: scale-path-2 10s ease-in-out infinite;
 }
-
+#index .svg-3 path{
+    animation: scale-path-3 9s ease-in-out infinite;
+}
 @keyframes scale-path-1 {
   50% {
     d: path('M64,23 C3,82 329,14 261,69');
   }
 }
-
 @keyframes scale-path-2 {
   50% {
     d: path('M30,68 C341,0 344,182 62,17');
+  }
+}
+@keyframes scale-path-3 {
+  50% {
+    d: path('M41,99 C414,51 21,10 259,13');
   }
 }
 
@@ -28,54 +34,79 @@
   stroke-linejoin: round;
   transition: 0.2s;
 }
-#index .svg-1 {
-  display: inline-block;
-  width: 65%;
+ #index {
+    height: 130vw;
+  }
+@media (min-width: 640px) {
+  #index {
+    height: 58vw;
+  }
 }
-#index .svg-2 {
-  display: inline-block;
-  width: 60%;
+@media (min-width: 1024px) {
+  #index {
+    height: 42vw;
+  }
+}
+@media (min-width: 1536px) {
+  #index {
+    height: 35vw;
+  }
 }
 </style>
 
-<div id="index" style="height: 700px; padding-bottom: 26px;" class="grid grid-flow-row grid-rows-4 grid-cols-2 gap-2 m-auto pl-3 pr-3 -mt-32 max-w-screen-2xl">
-  <div class="transform scale-115 -rotate-2 translate-y-32 translate-x-20 -z-1">
-    <span class="font-platelet-heavy text-8xl uppercase text-black">is</span>
-    <svg xmlns="http://www.w3.org/2000/svg" class="svg-1 stroke-current text-red" viewBox="0 0 300 100" preserveAspectRatio="xMidYMid meet">
-      <path d="M28,34 C262,15 0,81 286,62" />
+<div id="index" class="grid grid-flow-row grid-rows-4 grid-cols-2 gap-2 m-auto pl-3 pr-3">
+  <div class="transform scale-115 -rotate-2 leading-tight translate-x-6 sm:translate-x-20 -z-1">
+    <span class="uppercase font-dunbar-tall font-bold text-14vw sm:text-7vw text-black">is</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-full sm:w-7/12 stroke-current text-red" viewBox="0 0 300 125" preserveAspectRatio="xMidYMid meet">
+      <path d="M28,34 C262,15 0,81 286,62">
+        <animate attributeName="d" begin="0s" dur="8s"
+        values="M28,34 C262,15 0,81 286,62;
+                M64,23 C3,82 329,14 261,69;
+                M28,34 C262,15 0,81 286,62"
+        repeatCount="indefinite"
+        />
+      </path>
     </svg>
   </div>
-  <div class="transform -rotate-6 translate-y-32 h-20 pr-20 -translate-x-40 text-right">
-    <a href="/collections/frontpage"><button class="bg-red animate-wiggle h-32 px-4 text-9xl leading-4 uppercase font-platelet-heavy tracking-wider text-white rounded hover:bg-black hover:text-cream">Order</button></a>
+  <div class="transform -rotate-6 h-20 sm:pr-20 sm:translate-y-6 sm:translate-y-0 lg:-translate-x-40 text-right">
+    <a href="/collections/frontpage"><button class="bg-red animate-wiggle px-2 sm:px-4 text-11vw sm:text-6vw uppercase font-dunbar-tall font-bold tracking-wider text-white rounded hover:bg-black hover:text-cream">Order</button></a>
   </div>
-  <div class="transform rotate-6 col-span-2 translate-y-32 pl-28 -z-1">
-    <span class="font-platelet-heavy text-10xl uppercase text-black">Portland's</span>
+  <div class="transform rotate-6 scale-95 sm:scale-90 col-span-2 sm:pl-20 md:pl-28 -z-1">
+    <span class="font-dunbar-tall font-bold text-15vw sm:text-9vw uppercase text-black">Portland's</span>
   </div>
-  <div class="transform translate-y-40 pl-8">
-    <a href="/pages/about-us"><button class="bg-black text-cream animate-bounce px-4 py-2 text-6xl font-platelet-heavy tracking-wider text-white rounded hover:bg-red hover:text-black">About Us</button></a>
+  <div class="transform pl-4 sm:pl-8 -translate-y-8 sm:translate-y-0 xl:translate-y-10 lg:translate-y-6 sm:pl-8">
+    <a href="/pages/about-us"><button class="bg-black text-cream animate-bounce px-2 sm:px-4 py-2 text-7vw sm:text-4vw uppercase font-dunbar-tall font-bold tracking-wider text-white rounded hover:bg-red hover:text-black">About Us</button></a>
   </div>
-  <div class="transform text-right -z-1 translate-y-12">
-     <svg xmlns="http://www.w3.org/2000/svg" class="svg-2 stroke-current text-red" viewBox="0 0 300 125" preserveAspectRatio="xMidYMid meet">
-      <path d="M248,62 C0,0 390,22 19,32" />
+  <div class="transform -translate-y-12 sm:-translate-y-20 text-right -z-1">
+    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-full sm:w-7/12 stroke-current text-red" viewBox="0 0 300 125" preserveAspectRatio="xMidYMid meet">
+      <path d="M248,62 C0,0 390,22 19,32">
+        <animate attributeName="d" begin="0s" dur="9s"
+        values="M248,62 C0,0 390,22 19,32;
+                M30,68 C341,0 344,182 62,17;
+                M248,62 C0,0 390,22 19,32"
+        keySplines=".42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;"
+        repeatCount="indefinite"
+        />
+      </path>
     </svg>
   </div>
-  <div class="transform col-span-2 translate-y-40 pl-24 leading-4 -rotate-12 -z-1">
-    <span class="font-platelet-heavy text-11xl uppercase text-black">sustainable</span>
+  <div class="transform translate-x-32 sm:translate-x-0 xl:-translate-x-4 -translate-y-4 sm:translate-y-12 text-right sm:text-left -z-1">
+    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-full sm:w-7/12 stroke-current text-red" viewBox="0 0 300 125" preserveAspectRatio="xMidYMid meet">
+      <path d="M41,99 C118,87 303,90 260,13">
+        <animate attributeName="d" begin="0s" dur="10s"
+        values="M41,99 C118,87 303,90 260,13;
+                M41,99 C414,51 21,10 259,13;
+                M41,99 C118,87 303,90 260,13"
+        keySplines=".42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;.42 0 1 1;0 0 .59 1;"
+        repeatCount="indefinite"
+        />
+      </path>
+    </svg>
   </div>
-  <div class="transform col-span-2 translate-y-4 -translate-x-28 text-right -z-1">
-    <span class="font-platelet-heavy text-10xl uppercase text-black">florist</span>
+  <div class="transform -translate-y-20 scale-95 sm:scale-100 -translate-x-40 sm:-translate-x-60 l:-translate-x-80 2xl:-translate-x-1/2 -rotate-12 -z-1">
+    <span class="font-dunbar-tall font-bold text-14vw sm:text-8vw lg:text-7vw uppercase text-black">sustainable</span>
+  </div>
+  <div class="transform col-span-2 -translate-y-12 leading-1 -translate-x-6 sm:-translate-x-0 text-right -z-1">
+    <span class="font-dunbar-tall font-bold text-20vw sm:text-10vw lg:text-9vw uppercase text-black">florist</span>
   </div>
 </div>
-
-{% comment %}
-{% for product in collections.frontpage.products limit:4 %}
-  <div>
-    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-    {{ product.price | money }}
-    {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
-    <a href="{{ product.url | within: collection }}">
-      <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-    </a>
-  </div>
-{% endfor %}
-{% endcomment %}

@@ -1,0 +1,74 @@
+{{ 'lazysizes.min.js' | asset_url | script_tag }}
+{{ 'masonry.min.js' | asset_url | script_tag }}
+{{ 'imagesloaded.min.js' | asset_url | script_tag }}
+<style>
+.item {
+  margin: 10px 0;
+  display: inline-block;
+  border-radius: 4px;
+  width: calc(33.33% - 13px);
+}
+
+.item {
+  opacity: 0;
+}
+
+.item.pop-up {
+  animation: popUp 600ms ease-in forwards;
+}
+
+.item.fade-up {
+  animation: fadeUp 600ms ease-in forwards;
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotateY(90deg);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  90% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translate3d(0,40px,0);
+  }
+  100% {
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+}
+</style>
+
+<script>
+$('img').addClass('item');
+
+// Masonry Grid
+var $grid = $('.grid').masonry({
+  itemSelector: '.item',
+  gutter: 20
+});
+
+$grid.imagesLoaded().progress( function() {
+  $grid.masonry('layout');
+});
+
+$('.portfolio-grid .item').each(function(i){
+  setTimeout(function(){
+    $('.item').eq(i).addClass('fade-up');
+  }, 200 * i);
+});
+$('.article-grid .item').each(function(i){
+  setTimeout(function(){
+    $('.item').eq(i).addClass('pop-up');
+  }, 200 * i);
+});
+</script>

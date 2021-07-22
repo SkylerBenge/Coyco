@@ -24,12 +24,6 @@ module.exports = {
         DEFAULT: '#ffffff'
       }
     },
-    fontFamily: {
-      'platelet': ['Platelet', 'cursive'],
-      'platelet-heavy': ['Platelet Heavy', 'cursive'],
-      'ubuntu': ['Ubuntu', 'cursive'],
-      'ubuntu-heavy': ['Ubuntu Heavy', 'cursive']
-    },
     scale: {
       '0': '0',
       '25': '.25',
@@ -62,6 +56,26 @@ module.exports = {
       '10xl': '10rem',
       '11xl': '12rem',
       '12xl': '14rem',
+      '1vw': '1vw',
+      '2vw': '2vw',
+      '3vw': '3vw',
+      '4vw': '4vw',
+      '5vw': '5vw',
+      '6vw': '6vw',
+      '7vw': '7vw',
+      '8vw': '8vw',
+      '9vw': '9vw',
+      '10vw': '10vw',
+      '11vw': '11vw',
+      '12vw': '12vw',
+      '13vw': '13vw',
+      '14vw': '14vw',
+      '15vw': '15vw',
+      '16vw': '16vw',
+      '17vw': '17vw',
+      '18vw': '18vw',
+      '19vw': '19vw',
+      '20vw': '20vw'
     },
     keyframes: {
       wiggle: {
@@ -94,7 +108,7 @@ module.exports = {
       lineHeight: {
         '1': '.25rem',
         '2': '.5rem'
-      }
+      },
     }
   },
   variants: {

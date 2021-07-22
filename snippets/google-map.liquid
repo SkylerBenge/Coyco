@@ -1,0 +1,30 @@
+
+<div id="map" class="h-80"></div>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa57iWiIoMqpLsuC1ifshm4ZObD4LLV1E&callback=initMap&libraries=&v=beta&map_ids=8e0a97af9386fef"
+  defer
+></script>
+
+<script>
+function initMap() {
+  const myLatLng = { lat: 45.523, lng: -122.6574 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    mapId: "d1f9166ce9ab3a4b",
+    center: myLatLng,
+    panControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    streetViewControl: false,
+    overviewMapControl: false,
+    rotateControl: false,
+    zoom: 14,
+  });
+  new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "Hello World!",
+  });
+
+}
+</script>
