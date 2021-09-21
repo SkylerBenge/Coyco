@@ -1,5 +1,5 @@
 // jQuery Ajax for feed Instagram Graph API
-if ( $('#instagram-feed1').length != 0 ) {
+if ( $('#instagram-feed').length != 0 ) {
 
     var token = 'IGQVJVd2xmVlFiUmFld3dKQlBSVkp5bXJFcEZAnQ1BWOXB1OEItQVNaTkc1NUdGZA0pYb0dzSjRnMzhaZAFhTSkRmcUpmd09zeXZAsRlJDZA0hpWFRYSlJ5QWRUaEtWdTRHelVuUkhqZAUtGX1BMR1RpcGJJVwZDZD';
     var fields = 'id,media_type,media_url,thumbnail_url,timestamp,permalink,caption';
