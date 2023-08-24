@@ -1,5 +1,7 @@
 {% include 'about-nav' %}
+{% comment %}
 {% include 'squiggle-border' %}
+{% endcomment %}
 <h1 class="heading">{{ page.title }}</h1>
 <div class="flex flex-wrap">
   <div class="flex flex-col w-full md:w-6/12 pl-6 pr-6">
@@ -19,67 +21,78 @@
 
     <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
 
-    <h2 class="text-3xl subhead">“I’m your florist. I care about how long your flowers last, where they come from, who harvests them, how they’re preserved, and the waste associated, so that you don’t have to.”</h2>
+    <h2 class="text-3xl subhead">"I'm your florist. I care about how long your flowers last, where they come from, who harvests them, how they're preserved, and the waste associated, so that you don't have to."</h2>
 
     <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
 
-    <img alt="{{ section.settings.third_image.alt | escape }}" src="{{ section.settings.third_image | img_url: '300x' }}" data-src="{{ section.settings.third_image | img_url: 'master' }}" class="w-full lazyload animate-bounce" />
-
+    <img alt="{{ section.settings.fourth_image.alt | escape }}" src="{{ section.settings.fourth_image | img_url: '300x' }}" data-src="{{ section.settings.fourth_image | img_url: 'master' }}" class="w-full lazyload" />
   </div>
 
   <div class="flex flex-col w-full md:w-6/12 pl-6 pr-6">
-    <h1 class="subhead-heavy">Coy & Co. provides true-to-you curatorial floral design to Portland, OR and beyond.</h1>
+    <h1 id="list" class="subhead-heavy">Coy & Co. provides true-to-you curatorial floral design to Portland, OR and beyond.</h1>
 
     <p class="body">
-      We believe that being true-to-you means being true to our future as a community and preserving the planet for generations to come. That’s why we became
-      <span class="font-extrabold">Portland’s First Sustainably Certified Florist.</span>
+      We believe that being true-to-you means being true to our future as a community and preserving the planet for generations to come. That's why we became
+      <span class="font-extrabold">Portland's First Sustainably Certified Florist.</span>
       That means we care about where your flowers come from, how they got here, and how we treat them.
     </p>
 
     <p class="body">Some of the ways that we reduce our carbon footprint in the floral industry:</p>
 
     <ul class="body list-disc pl-8">
-      <li>We use 100% Locally Grown Fresh & Dried Flowers & Foliage, all year, regardless of availability. We define local as a place you can drive to and from in less than a day.</li>
-      <li>All of our flowers are biodegradable & non-toxic, that means they’ll never be dyed, bleached, or preserved with toxic chemicals.</li>
-      <li>We compost locally and diligently. We include clean-up services in our event work to ensure responsible disposal and reuse of materials.</li>
-      <li>We never use or buy single-use plastic or materials wrapped in single-use plastic.</li>
-      <li>We love being <a target="_blank" href="https://www.portlandoregon.gov/bes/52501" class="text-red">Green Street Stewards!</a>
-      <li>All preservatives and cleansers are biodegradable, non-toxic, and refillable.</li>
+      <li class="mb-4">We sell 100% Locally Grown Flowers & Foliage, locally made ceramics, ribbon, and cards, all day, every day, year round. We define local as a place you can drive to and from in less than a day. Be sure to ask your florist how they define local as the Department of Agriculture through The <a target="_blank" class="underline text-red" href='https://www.govinfo.gov/content/pkg/PLAW-110publ246/pdf/PLAW-110publ246.pdf'>Food, Energy, and Conservation Act of 2008</a> defines it as within 400 miles. You will often hear florists say they are “local-first”, “local when available”, or “sustainably minded” while only selling locally grown flowers on occasion or at the height of summer. We ONLY sell local, year round, regardless of availability/ease. How do we do this? We stay connected to our local farmers and pay close attention to our climate and seasons to develop a wealth of knowledge that most become disconnected to due to globalization. We are also comfortable communicating with our customers about availability and are creative with adapting the requests made to fulfill an aesthetic or theme. In addition, we have a shop cut garden and greenhouse that we will often use to fill in the gaps our local growers rarely cannot! That usually will happen about two weeks out of the year in January when you'll receive cut forced bulbs from our very own greenhouse!</li>
+      <li class="mb-4">All of our flowers and floral design services are biodegradable and home-compostable. That means they'll never be dyed, painted, bleached, glued, taped, zip-tied, wired, or preserved with toxic chemicals. This includes flower crowns, boutonnieres, corsages, wreaths, garlands and bouquets. Services we provide that require re-use are centerpieces in locally made vases (just bring the vase back to our shop every week for us to refill for you!). We are single-use plastic free and wrap our bouquets in a home-compostable paper and string.</li>
+      <li class="mb-4">We compost in-house at our shop cut garden! We love that our local municipality provides composting services to it's residents, but we feel the most responsible way to make sure our emissions are as low as possible is to compost ourselves. Considering we produce so many nutrients available to give back to our soil, it only makes sense that we would be responsible stewards to the land we use to grow some of the flowers you all get to enjoy. This also means that we include clean-up services in our event work to ensure responsible disposal and reuse of materials.</li>
+      <li class="mb-4">We never use or buy single-use plastic or materials wrapped in single-use plastic. That means our cards are plastic-free and are delivered to our shop by the local artists that make them without plastic packaging. When you come to our shop you'll notice that our card wall is display-only so that we don't have to protect all of the cards with plastic wrap. You'll receive a fresh one from our inventory once you've made your decision! Our bouquets are wrapped in an unbleached home-compostable parchment paper and a home-compostable 100% plant based string like hemp, bamboo, or cotton.</li>
+      <li class="mb-4">We love being <a target="_blank" href="https://www.portlandoregon.gov/bes/52501" class="text-red underline">Green Street Stewards!</a>
+      <li class="mb-4">All of the cleansers we use to clean our shop, buckets, vases, etc. are biodegradable, non-toxic, and refilled at our local refillery.</li>
+      <li class="mb-4">We never have floral inventory waste as we dry any possible overstock to be reused in winter. We never use preservatives or sprays to dry or preserve our flowers so that we can maintain their biodegradability.</li>
     </ul>
 
     <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
 
-    <h2 class="subhead">“ When you buy from me, you’re not just supporting one small sustainable woman-owned business, you’re supporting an entire network of them.™ ”</h2>
+    <h2 class="subhead">" When you buy from me, you're not just supporting one small sustainable woman-owned business, you're supporting an entire network of them.™ "</h2>
 
-    <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
+    {% comment %} <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
 
-    <img alt="{{ section.settings.second_image.alt | escape }}" src="{{ section.settings.second_image | img_url: '300x' }}" data-src="{{ section.settings.second_image | img_url: 'master' }}" class="w-full lazyload rounded-3xl" />
+    <img alt="{{ section.settings.third_image.alt | escape }}" src="{{ section.settings.third_image | img_url: '300x' }}" data-src="{{ section.settings.third_image | img_url: 'master' }}" class="w-full lazyload" /> {% endcomment %}
   </div>
   <div class="px-6">
+    <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
+    <img alt="{{ section.settings.second_image.alt | escape }}" src="{{ section.settings.second_image | img_url: '300x' }}" data-src="{{ section.settings.second_image | img_url: 'master' }}" class="w-full lazyload rounded-3xl" />
     <h2 class="heading">From our Founder:</h2>
-    <p class="body">“I’m your florist. I care about how long your flowers last, where they come from, who harvests them, how they’re preserved, the waste associated, so that you don’t have to. </p>
-    <p class="body">I go out of my way to make sure you’re not only getting the best quality, but that your carbon footprint isn’t bigger than it needs to be. I use biodegradable cleansers, I never use floral foam, I wrap your bouquets in compostable paper, I buy local, I dry my overstock to be reused in winter, I use recycled newspapers for transport packing, I use zero preservatives, I do garden &amp; farm walkthroughs to ask the questions most won’t ask (do you use pesticides, are these roses salmon-safe, who do you hire, how are they treated?).</p>
-    <p class="body">Why do I do all of this? Why does it matter? Because the international floral industry has one of the largest agricultural carbon footprints. From Dutch hot-houses to jets full of roses sent from Ecuador, unnecessary waste is astronomical and plain silly when considering what is available locally. </p>
-    <p class="body">The Pacific Northwest is packed with family-owned farms that painstakingly select the best varieties and cultivate them year-round in the hopes to provide the best products to their customers. When you buy from me, you’re not just supporting one small sustainable woman-owned business, you’re supporting an entire network of them. From Peterkort Roses in Hillsboro, to Indigo Gardens in East Portland, to Small Yard Flowers in St.Johns, to Elevine Floral in Canby... there is more than enough local farms to provide breath-taking, artful floral arrangements year-round. Enough guilt-free flowers to have them fresh on your kitchen table, every week.”</p>
-    <p class="body">Founder &amp; Curator </p>
-    <p class="body">Coy &amp; Co. Curatorial Floral</p>
+
+    <p class="body">
+      "I'm your florist. I care about where your flowers come from and the waste associated with their cultivation: <span style='text-decoration: underline;'>so that you don't have to</span>. I believe a business can be a template for the way you want to see the world, and every day is a new challenge and choice to be true to that vision. We're honored to be given the opportunity by you all to innovate with you as we look to a better future.
+    </p>
+
+    <p class="body">I go out of my way to make sure you're not only getting the best quality, but that your carbon footprint isn't bigger than it needs to be. From getting to know every single one of our growers and their cultivation processes to staying on-site at events until late in the evening to ensure proper re-use and composting of our designs. <a class="underline text-red" href="#list">The list</a> of the lengths we go to can go on for days, but the real proof in the pudding is the lasting relationships we continue to have with our community. Customers, vendors, and farmers we've worked with since the beginning show up for us in more ways than we could have ever imagined. I believe a business can foster and inspire a kind-hearted action-based community that reaches far past the boundaries of it's own industry because I've seen it with my own eyes.</p>
+
+    <p class="body">Why do I do all of this? Why does it matter? Because the agricultural sector takes up almost a quarter of our global greenhouse gas emissions, and the international floral industry's sector is largely ornamental in nature, so why the reliance on international trade? Unnecessary and egregious waste is just plain silly when considering what is available locally and seasonally year-round.</p>
+
+    <p class="body">The Pacific Northwest is packed with sustainable, natural, and organic small and legacy family-owned farms that painstakingly select the best varieties and cultivate them year-round to provide the best products to their customers. When you buy from me, you're not just supporting one small sustainable woman-owned business, you're supporting an entire network of them. There are more than enough local farms to provide breath-taking, artful floral arrangements year-round. Enough guilt-free flowers to have them fresh on your kitchen table, every day."</p>
+
+    <p class="body">-Lynsea Coy</p>
+    <p class="body">Founder & Curator</p>
+    <p class="body">Coy & Co. Curatorial Floral</p>
   </div>
 </div>
 <div>
   <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
   <h2 class="heading">In the press</h2>
-  <div class="flex flex-wrap items-end">
+  <div class="flex flex-wrap">
     {% for block in section.blocks %}
       {% if block.type == "text" %}
-        <div class="flex flex-col w-full md:w-6/12 px-6 mb-6">
+        <div class="flex flex-col justify-between w-full md:w-6/12 px-6 mb-6">
+          <h2 class="subhead-heavy">{{ block.settings.article_text }}</h2>
+          <div class="relative">
+            <img alt="{{ block.settings.article_image.alt | escape }}" src="{{ block.settings.article_image | img_url: '300x' }}" data-src="{{ block.settings.article_image | img_url: 'master' }}" class="w-full lazyload" />
+            {% if block.settings.is_video %}
+              <img alt="{{ section.settings.play_image.alt | escape }}" src="{{ section.settings.play_image | img_url: '50x' }}" data-src="{{ section.settings.play_image | img_url: 'master' }}" class="lazyload w-20 absolute transform -translate-x-1/2 -translate-y-1/2 inset-2/4" />
+            {% endif %}
+          </div>
           <a target="_blank" href="{{ block.settings.article_link }}">
-            <h2 class="subhead-heavy">{{ block.settings.article_text }}</h2>
-            <div class="relative">
-              <img alt="{{ block.settings.article_image.alt | escape }}" src="{{ block.settings.article_image | img_url: '300x' }}" data-src="{{ block.settings.article_image | img_url: 'master' }}" class="w-full lazyload" />
-              {% if block.settings.is_video %}
-                <img alt="{{ section.settings.play_image.alt | escape }}" src="{{ section.settings.play_image | img_url: '50x' }}" data-src="{{ section.settings.play_image | img_url: 'master' }}" class="lazyload w-20 absolute transform -translate-x-1/2 -translate-y-1/2 inset-2/4" />
-              {% endif %}
-            </div>
+            <button class="w-60 sm:w-40 bg-red hover:bg-black text-cream px-2 sm:px-6 py-1 sm:py-3 text-2xl font-dunbar-tall mx-auto block mb-8 mt-4 font-semibold sm:tracking-wider rounded slide-button" type="button">Read</button>
           </a>
         </div>
       {% endif %}
@@ -115,6 +128,11 @@
         "type": "image_picker",
         "id": "third_image",
         "label": "Third Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "fourth_image",
+        "label": "Fourth Image"
       },
       {
         "type": "image_picker",

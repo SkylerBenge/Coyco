@@ -9,7 +9,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       black: {
-        DEFAULT: '#222222'
+        DEFAULT: '#F00'
       },
       red: {
         DEFAULT: '#cc3c38'
@@ -115,6 +115,17 @@ module.exports = {
     extend: {
       animation: ['hover', 'focus']
     },
+  },
+  screens: {
+    'aspect-16/9': {'raw': '(min-aspect-ratio: 16/9)'},
+    'aspect-9/16': {'raw': '(min-aspect-ratio: 9/16)'},
+    'aspect-21/9': {'raw': '(min-aspect-ratio: 21/9)'},
+    'aspect-9/19': {'raw': '(min-aspect-ratio: 9/19)'},
+    'aspect-4/3': {'raw': '(min-aspect-ratio: 4/3)'},
+    'aspect-3/4': {'raw': '(min-aspect-ratio: 2/4)'},
+    'aspect-2/1': {'raw': '(min-aspect-ratio: 2/1)'},
+    'aspect-1/2': {'raw': '(min-aspect-ratio: 1/2)'},
+    'aspect-1/1': {'raw': '(min-aspect-ratio: 1/1)'},
   },
   plugins: [],
 }

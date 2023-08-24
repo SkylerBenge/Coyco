@@ -1,5 +1,7 @@
 {% include 'about-nav' %}
+{% comment %}
 {% include 'squiggle-border' %}
+{% endcomment %}
 <div class="flex flex-wrap">
   <h1 class="heading">How can we help you?</h1>
   <div class="flex flex-col w-full md:w-6/12 pl-6 pr-6">
@@ -18,16 +20,20 @@
       <div class="w-full sm:w-1/2">
         <p class="body"><span class="font-bold">Hours//</span><br>
           <span class="font-bold">Monday:</span> 11AM–4PM<br>
-          <span class="font-bold">Tuesday:</span>	11AM–4PM<br>
-          <span class="font-bold">Wednesday:</span>	11AM–6PM<br>
-          <span class="font-bold">Thursday:</span>	11AM–6PM<br>
-          <span class="font-bold">Friday:</span>	11AM–6PM<br>
-          <span class="font-bold"> Saturday:</span>	11AM–6PM<br>
+          <span class="font-bold">Tuesday:</span>	Closed<br>
+          <span class="font-bold">Wednesday:</span>	11AM–4PM<br>
+          <span class="font-bold">Thursday:</span>	11AM–4PM<br>
+          <span class="font-bold">Friday:</span>	11AM–4PM<br>
+          <span class="font-bold"> Saturday:</span>	11AM–4PM<br>
           <span class="font-bold">Sunday:</span>	Closed
         </p>
       </div>
+      <div class="transform z-1 relative flex">
+        <a target="_blank" href="https://www.instagram.com/coy_and_co/" class="flex w-24 mr-4">{% include 'instagram-icon' %}</a>
+        <a target="_blank" href="mailto:coyandco@gmail.com" class="flex w-24">{% include 'mail-icon' %}</a>
+      </div>
     </div>
-    <h2 class="subhead-heavy mt-8">Request a Quote</h2>
+    <h2 class="subhead-heavy subhead-heavy-2 mt-8">Request a Quote</h2>
     <hr class="mb-8 w-full border-4 rounded-md border-red bg-red">
     {% form 'contact' %}
       {% if form.posted_successfully? %} Thank you for your contact {% endif %}
@@ -36,26 +42,42 @@
       <input class="appearance-none block w-full text-black text-l border border-black rounded py-3 px-4 mb-3 bg-white focus:outline-none" type="text" id="ContactFormName" name="contact[name]">
       <label class="block uppercase font-dunbar-tall text-black text-l font-bold mb-2" for="ContactFormEmail">Email</label>
       <input class="appearance-none block w-full text-black text-l border border-black rounded py-3 px-4 mb-3 bg-white focus:outline-none"type="email" id="ContactFormEmail" name="contact[email]">
+      <label class="block uppercase font-dunbar-tall text-black text-l font-bold mb-2" for="ContactFormLocation">Location</label>
+      <input class="appearance-none block w-full text-black text-l border border-black rounded py-3 px-4 mb-3 bg-white focus:outline-none"type="location" id="ContactFormLocation" name="contact[location]">
       <label class="block uppercase font-dunbar-tall text-black text-l font-bold mb-2" for="ContactFormDate">Budget</label>
       <input class="appearance-none block w-full text-black text-l border border-black rounded py-3 px-4 mb-3 bg-white focus:outline-none" type="number" id="ContactFormDate" name="contact[date]">
       <label class="block uppercase font-dunbar-tall text-black text-l font-bold mb-2" for="ContactFormDate">Project Date</label>
       <input class="appearance-none block w-full text-black text-l border border-black rounded py-3 px-4 mb-3 bg-white focus:outline-none" type="date" id="ContactFormDate" name="contact[date]">
       <label class="block uppercase font-dunbar-tall text-black text-l font-bold mb-2" for="ContactFormMessage">Project Description</label>
       <textarea class="appearance-none block w-full text-black text-l border border-black rounded py-3 px-4 mb-3 bg-white focus:outline-none" rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
-      <input class="shadow uppercase text-2xl font-dunbar-tall bg-black hover:bg-red text-l focus:shadow-outline focus:outline-none text-cream font-bold py-2 px-4 rounded" type="submit" value="send">
+      <input class="shadow uppercase w-full text-2xl font-dunbar-tall bg-black hover:bg-red text-l focus:shadow-outline focus:outline-none text-cream font-bold py-2 px-4 rounded" type="submit" value="send">
     {% endform %}
+    <hr class="mt-8 mb-8 w-full border-4 rounded-md border-red bg-red">
+    {% include 'google-map' %}
+    <a href="https://trimet.org/#/planner"  class="bg-black text-cream text-center px-6 py-3 mt-6 text-2xl font-dunbar-tall font-semibold rounded hover:bg-red hover:text-black">Plan your Trip to Coy &amp; Co. on Trimet!</a>
   </div>
   <div class="flex flex-col w-full md:w-6/12 pl-6 pr-6">
     <h2 class="subhead-heavy">Frequently Asked Questions</h2>
     <hr class="mb-8 w-full border-4 rounded-md border-red bg-red">
     {% for block in section.blocks %}
-      <h3 class="subhead">{{ block.settings.question }}</h3>
-      <div class="body">{{ block.settings.answer }}</div>
+      <div class="faq relative mb-12">
+        <div class="question cursor-pointer">
+          <h3 class="subhead pl-16">{{ block.settings.question }}</h3>
+          <div class="plus-icon absolute top-2 left-2">{% include 'plus-icon' %}</div>
+          <div class="absolute top-2 left-2">{% include 'minus-icon' %}</div>
+        </div>
+        <div class="body answer pl-16 hidden">{{ block.settings.answer }}</div>
+        </div>
     {% endfor %}
-    {% include 'google-map' %}
-    <a href="https://trimet.org/#/planner"  class="bg-black text-cream text-center px-6 py-3 mt-6 text-2xl font-dunbar-tall font-semibold rounded hover:bg-red hover:text-black">Plan your trip to coy &amp; co. on Trimet!</a>
   </div>
 </div>
+
+<script>
+  $('.question').click(function() {
+    $(this).parents('.faq').find('.answer').slideToggle( "slow" );
+    $(this).parents('.faq').find('.plus-icon').toggle();
+  });
+</script>
 
 {% schema %}
   {

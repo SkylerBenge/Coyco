@@ -1,5 +1,5 @@
 <div class="hidden bg-cream z-2 absolute h-full w-72 mobile-nav__background"></div>
-<nav class="flex relative items-start md:items-center md:justify-between flex-wrap py-6 sm:px-6">
+<nav class="flex relative items-start md:items-center md:justify-between py-6 xl:px-6">
   <button class="w-10 mobile-nav__button z-2 md:hidden">{% include 'menu-icon' %}</button>
   <ul class="transition duration-500 nav__links max-w-max absolute z-2 md:static -top-80 left-20">
     {% for link in linklists.main-menu.links %}
@@ -16,15 +16,15 @@
       {% else %}
       {% if forloop.index == 1 %}
         {% capture nav_classes %}
-          "transform translate-x-5 lg:translate-x-20"
+          "transform rotate-6 md:translate-x-16 lg:translate-x-28"
         {% endcapture %}
       {% elsif forloop.index == 2 %}
         {% capture nav_classes %}
-          "transform rotate-6 translate-x-4 lg:translate-x-16 translate-y-4"
+          "transform rotate-30 md:translate-x-14 lg:translate-x-20 translate-y-8 lg:translate-y-10"
         {% endcapture %}
       {% elsif forloop.index == 3 %}
         {% capture nav_classes %}
-          "transform rotate-12 translate-x-1 lg:translate-x-12 translate-y-8"
+          "transform rotate-60 -translate-x-14 md:translate-x-0 translate-y-14"
         {% endcapture %}
       {% endif %}
       <li class={{ nav_classes }}>
@@ -36,14 +36,18 @@
     {% endfor %}
   </ul>
 
-  <div class="mx-auto sm:px-3 max-w-screen-2xl leading-4">
-    <div class="transform -rotate-6 xl:translate-y-16 col-span-2 text-center">
-      <span class="font-dunbar-tall font-extrabold text-14vw md:text-10vw uppercase text-black -z-1"><a href="/">Coy & CO.</a></span>
+  <div class="mx-auto max-w-screen-2xl leading-4">
+    <div class="transform -rotate-6{% if template == 'index' %} md:-translate-y-4{% else %} translate-y-16{% endif %} col-span-2 text-center">
+      {% if template == 'index' %}
+        <span class="font-dunbar-tall font-extrabold text-15vw md:text-18vh uppercase text-black -z-1"><a href="/">Coy & CO.</a></span>
+      {% else %}
+        <span class="font-dunbar-tall font-extrabold text-15vw uppercase text-black -z-1"><a href="/">Coy & CO.</a></span>
+      {% endif %}
     </div>
   </div>
 
-  <div class="w-10 sm:w-auto transform z-1 relative -translate-x-1 sm:-translate-x-5 lg:-translate-x-20">
-    {% unless template == 'index' and cart.item_count == 0 %}
+  <div class="w-10 sm:w-auto transform z-1 relative -translate-x-1 sm:-translate-x-5 lg:-translate-x-20 overflow-hidden">
+    {% unless template == 'index' %}
     <a href="/cart" class="inline-block w-16">{% include 'cart-icon' %}</a>
     <div id="CartCount" class="absolute bottom-0 right-0 px-2 bg-black text-cream rounded {% if cart.item_count == 0 %} hidden{% endif %}">
       <span class="font-platelet-heavy text-sm">{{ cart.item_count }}</span>

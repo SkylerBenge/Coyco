@@ -13,5 +13,6 @@
     "autoprefixer": "^10.2.5",
     "postcss": "^8.2.12",
     "tailwindcss": "^2.1.2"
-  }
+  },
+  "build": "npx tailwindcss build css/application.css -o assets/application.css.liquid && theme deploy"
 }

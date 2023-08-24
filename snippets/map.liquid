@@ -1,0 +1,143 @@
+
+<div class="mt-20 mb-20 max-w-screen-xl mx-auto relative">
+  <form method="post" class="flex" id="geocoding_form">
+    <input type="text" id="address" placeholder="Enter Address" class="appearance-none block w-full text-black text-l border border-black rounded h-12 px-4 mb-3 bg-white focus:outline-none">
+    <input type="submit" class="shadow uppercase text-2xl font-dunbar-tall bg-black hover:bg-red text-l focus:shadow-outline focus:outline-none text-cream font-bold h-12 px-4 rounded" value="Search" />
+  </form>
+  <textarea class="delivery-location hidden" rows="10" maxlength="300"></textarea>
+
+  <p id="delivery-fee" class="body text-center">We deliver to anywhere within 10 miles of our shop. If you are not in our delivery zone please feel free to schedule a pick up order.</p>
+  <div id="map" class="h-96 w-96 mx-auto mt-8 mb-8"></div>
+  <p id="delivery-fee" class="body text-center"></p>
+
+  <p class="body text-center">Please include any delivery instructions we will need to deliver your order. If this is to an apartment building we will need the unit number, the full name of the recipient, and the phone number of the recipient to be able to be let into their building. If there is a code to get into a gate, a door, an elevator, etc. please include this.</p>
+  <textarea class="delivery-instructions appearance-none block h-20 w-full text-black text-l border border-black rounded py-3 px-4 mb-3 bg-white focus:outline-none" rows="10" maxlength="300" id="MapNote"></textarea>
+  <p class="body text-center">IMPORTANT: We do not offer refunds OR reschedules for orders we cannot reach due to insufficient delivery instructions. We highly recommend double checking the delivery address, instructions, AND informing your recipient they will be receiving something on the date specified so they can be home or prepared to receive their order. (Max 300 Characters)</p>
+  <button disabled id="map-button" class="block w-60 sm:w-40 bg-red hover:bg-black text-cream px-2 sm:px-6 py-1 sm:py-3 text-2xl font-dunbar-tall mx-auto mb-8 mt-4 font-semibold sm:tracking-wider rounded slide-button" type="button" value={{subscription_option}}  name={{subscription_option | downcase }}>Select</button>
+</div>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa57iWiIoMqpLsuC1ifshm4ZObD4LLV1E&callback=initMap&&libraries=geometry,places&map_ids=8e0a97af9386fef"
+  defer
+></script>
+<script>
+function initMap() {
+  const myLatLng = { lat: 45.523, lng: -122.6574 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    mapId: "d1f9166ce9ab3a4b",
+    center: myLatLng,
+    scrollwheel: false,
+    navigationControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    draggable: false,
+    keyboardShortcuts: false,
+    disableDefaultUI: true,
+    rotateControl: false,
+    zoom: 10,
+  });
+
+  new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "Coy & Co.!",
+  });
+
+  circle = new google.maps.Circle({
+    center: myLatLng,
+    strokeColor: "red",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: "transparent",
+    map
+  });
+  circle.setRadius(15900);
+
+  const input = document.getElementById('address');
+  const options = {types: ['address']};
+  const autocomplete = new google.maps.places.Autocomplete(input, options);
+  let marker;
+
+  autocomplete.setBounds(circle.getBounds());
+  autocomplete.setOptions({strictBounds: true})
+  autocomplete.setFields(['address_component', 'formatted_address', 'geometry']);
+
+  google.maps.event.addListener(autocomplete, 'place_changed', function () {
+    const place = autocomplete.getPlace();
+    $('#geocoding_form').data('lat', place.geometry.location.lat());
+    $('#geocoding_form').data('lng', place.geometry.location.lng());
+  });
+
+  $('#geocoding_form').submit(function(e){
+    e.preventDefault();
+    const markerLatLng = { lat: $(this).data('lat'), lng:$(this).data('lng') };
+
+    console.log(marker);
+
+    if (marker !== undefined) {
+      marker.setMap(null);
+    }
+
+    marker = new google.maps.Marker({
+      position: markerLatLng,
+      map,
+      title: "Your Adress",
+    });
+
+    var coyco = new google.maps.LatLng(45.523, -122.6574);
+    var address = new google.maps.LatLng($(this).data('lat'), $(this).data('lng'));
+    var distance = google.maps.geometry.spherical.computeDistanceBetween(coyco, address) / 1609;
+    var distance = Math.round(distance);
+    if (distance % 2 === 1) {
+      var distanceAmount = distance + 11;
+    } else {
+      var distanceAmount = distance + 10;
+    }
+
+    if (distanceAmount < 3) {
+      $('#map-button').data('distance', '0-2 Miles');
+      $('#map-button').data('subscription-distance', 'Delivery Under 2 Miles');
+    } else if (distanceAmount < 5) {
+      $('#map-button').data('distance', '2-4 Miles');
+      $('#map-button').data('subscription-distance', 'Delivery Under 4 Miles');
+    } else if (distanceAmount < 7) {
+      $('#map-button').data('distance', '4-6 Miles');
+      $('#map-button').data('subscription-distance', 'Delivery Under 6 Miles');
+    } else if (distanceAmount < 9) {
+      $('#map-button').data('distance', '6-8 Miles');
+      $('#map-button').data('subscription-distance', 'Delivery Under 8 Miles');
+    } else {
+      $('#map-button').data('distance', '8-10 Miles');
+      $('#map-button').data('subscription-distance', 'Delivery Under 10 Miles');
+    }
+
+    var distance = $('#map-button').data('distance');
+    var cost = $('#map-button').data('cost');
+    var id = $('#' + distance.replace(/\s+/g, '-').toLowerCase() + '').data('id');
+    var price = $('#' + distance.replace(/\s+/g, '-').toLowerCase() + '').data('price');
+
+    $("#delivery-fee").text("You are " + distance + " miles away, your delivery fee will be $" + distanceAmount);
+    $('#map-button').prop("disabled", false);
+
+    $('#map-button').click(function() {
+      $('#CartNote').append('Delivery Instructions: ' + $('#MapNote').text());
+      {% if collection.template.suffix == 'subscription' %}
+        $('.chosen .variant').data('option1', $(this).data('subscription-distance'));
+      {% endif %}
+    });
+
+    $('.distance-check').each(function() {
+      $(this).prop( "checked", false );
+    });
+
+    $('.delivery-location').val($('#address').val());
+
+    $('#' + distance.replace(/\s+/g, '-').toLowerCase() + '').prop( "checked", true );
+    $('.order-summary .product-delivery').data('id', id );
+    $('.order-summary .product-delivery').data('price', price );
+    console.log($('.order-summary .product-delivery').data('id'));
+    $('.order-summary .hidden').show();
+    $('.order-summary .product-delivery').text($('#address').val());
+
+  });
+}
+</script>
